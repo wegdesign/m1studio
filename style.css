@@ -1,0 +1,40 @@
+/* 
+Theme Name: M1Studio
+Description: Designed by WegDesign
+Version: 1.0.0
+Author: WegDesign
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, white, two-columns, custom-background, translation-ready, custom-menu
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+*::-moz-selection {
+    background-color: #01749F;
+    color: #FFFFFF;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
