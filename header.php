@@ -11,41 +11,42 @@
 		<title><?php 	bloginfo( 'name' ); ?></title>
 		<meta name="description" content="<?php  get_bloginfo('description', 'display'); ?>">
 		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<?php wp_head(); ?>
 	</head>
+	<body <?php body_class(); ?>>
+		<div id="boxed">
+			<div id="wrapper">
+				<div class="topbar">
+					<div class="inner">
+						<div class="topbar_left ">
+							TOPBAR_LEFT
+						</div>
+						<div class="topbar_right">
+							<div id="social-icons">
+								<!-- social -->
+								social
+							</div>
+						</div>
+					</div><!-- inner -->
+				</div><!-- topbar -->
+				<div class="clear"></div>
+				<div id="header" class="header clearfix">
+					<div class="inner">
 
-<body <?php body_class(); ?>>
-	<div id="boxed">
-		<div id="wrapper">
-			<div class="topbar">
-				<div class="inner">
-					<div class="topbar_left ">
-					</div>
-					<div class="topbar_right">
-						<div id="social-icons">
-							<!-- social -->
-							social
+						<div class="logo">
+							LOGO
+						</div>
+						<!-- logo -->
+		
+						<div class="primarymenu menuwrap">
+							MENU
 						</div>
 					</div>
-				</div><!-- /inner -->
-			</div><!-- /topbar -->
-			<div class="clear"></div>
-			<div id="header" class="header clearfix">
-				<div class="inner">
-
-					<div class="logo">
-						
-					</div>
-					<!-- /logo -->
-		
-					<div class="primarymenu menuwrap">
-						
-					</div>
+					<!-- inner-->
 				</div>
-				<!-- /inner-->
-			</div>
-			<!-- /header -->
-			<div id="ajaxwrap">
+				<!-- header -->
+				<div id="ajaxwrap">
 			<?php if ( is_front_page() ){ ?>
 				<div id="featured_slider">
 					<div class="staticslider">
