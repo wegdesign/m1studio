@@ -53,9 +53,17 @@
 							<figure><img src="<?php echo get_template_directory_uri(); ?>/images/static_image.jpg" height="430" alt="staticslider"/></figure>
 						</div><!-- staticslider -->
 					</div><!-- featured_slider -->
+					
+					<div class="frontpage_teaser">
+						<div class="inner">
+							frontpage_teaser
+						</div>
+					</div>
+					
 					<?php 
 						wp_reset_query();
 					} ?>
+					
 					<?php if(!is_front_page()){?>
 						<div id="subheader">
 							<div class="inner">
