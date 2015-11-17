@@ -47,34 +47,38 @@
 				</div>
 				<!-- header -->
 				<div id="ajaxwrap">
-			<?php if ( is_front_page() ){ ?>
-				<div id="featured_slider">
-					<div class="staticslider">
-	
-						<figure><img src="<?php echo THEME_URI;?>/images/static_image.jpg" height="430" alt="staticslider"/></figure>
-		
-					</div><!-- .staticslider -->
-				</div><!-- #featured_slider -->
+					<?php if ( is_front_page() ){ ?>
+					<div id="featured_slider">
+						<div class="staticslider">
+							<figure><img src="<?php echo get_template_directory_uri(); ?>/images/static_image.jpg" height="430" alt="staticslider"/></figure>
+						</div><!-- staticslider -->
+					</div><!-- featured_slider -->
+					<?php 
+						wp_reset_query();
+					} ?>
+					<?php if(!is_front_page()){?>
+						<div id="subheader">
+							<div class="inner">
+								<div class="subdesc">
+									<h1 class="page-title"> 
+										<?php $postid = get_the_ID(); 
+											  $page = get_post($postid);
+											  $title = $page->post_title;
+											  echo $title;
+										?> 
+									</h1>
+								</div>
+								<div class="breadcrumbs">
+			    					<?php if(function_exists('bcn_display'))
+			    						{
+			        						bcn_display();
+			    						}?>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					
+					<div id="main" class="fullwidth">
 				
-			<?php 
-				wp_reset_query();
-				} ?>
-			
-			<?php if(!is_front_page()){?>
-			<div id="subheader">
-				<div class="inner">
-					<div class="subdesc">
-						<h1 class="page-title"></h1>
-						<div class="customtext"></div>
-					</div>
-					<div class="breadcrumbs">
-    					<?php if(function_exists('bcn_display'))
-    						{
-        						bcn_display();
-    						}?>
-					</div>
-				</div>
-			</div>
-			<?php } ?>
-			
-			<div id="main" class="fullwidth">
+				
+	
