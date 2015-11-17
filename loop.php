@@ -48,10 +48,7 @@
 
 <?php endwhile; ?>
 
-	<div class="navigation">
-		<div class="next-posts"><?php next_posts_link(); ?></div>
-		<div class="prev-posts"><?php previous_posts_link(); ?></div>
-	</div>
+	<?php if(function_exists('atp_pagination')){ echo atp_pagination(); }?>
 
 <?php else : ?>
 
