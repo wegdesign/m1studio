@@ -6,19 +6,9 @@
 
 	<div <?php post_class();?> id="post-<?php the_ID(); ?>">
 		<div class="post_content">
-			<?php 
-				if( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
-					global $post_id;
-					$img_alt_title 	= get_the_title();
-			?>
-			<div class="postimg">
-        		<figure>
-					<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
-						<?php echo atp_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
-					</a>
-				</figure>
-			</div>
-			<?php } ?>
+			
+			<?php get_template_part( 'utils/includes/' . $format ); ?>
+			
 			<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
 				<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>">
 				<?php the_title(); ?></a></h2>
