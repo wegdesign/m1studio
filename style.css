@@ -1564,7 +1564,17 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 /* Blog Post */
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
-.post { position: relative; padding-bottom: 40px;margin-bottom:40px; }
+
+
+
+
+.post { 
+	position: relative; 
+	/* padding-bottom: 40px; */
+	margin-bottom:40px; 
+	padding: 15px 0 15px 15px;
+	display: inline-block;
+}
 
 .post .quote {
     font-style: italic;
@@ -1577,6 +1587,12 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 }
 .post .quote span:before { content: "\2014 \00A0"; }
 .post:after{ clear: both; content: ""; }
+
+.post .entry-content{
+	float: left;
+    width: 558px;
+}
+
 
 .post h2.entry-title {
 	text-transform: none !important;
@@ -1593,7 +1609,13 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 	top:-10px;
 }
 
-.post .postimg { margin-bottom:15px; }
+.post .postimg { 
+	margin-bottom:15px; 
+	position: relative;
+    float: left;
+    margin-right: 20px;
+    width: 277px;
+}
 .post_content .flexslider,
 .post_content .video-frame { margin-bottom:20px; } 
 .post-info  {
