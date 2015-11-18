@@ -11,7 +11,6 @@ get_header(); ?>
 	<div class="inner">
 
 		<div class="content-area">
-		<?php $width = '960'; ?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php $format = get_post_format($post->ID);?>
 			

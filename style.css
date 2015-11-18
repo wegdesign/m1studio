@@ -507,13 +507,13 @@ h4 small { font-size: 12px; }
 
 #boxed #wrapper {
 	position: relative;
-	width: 1000px;
+	width: 1280px;
 	margin: 40px auto;
 }
 
 .inner {
 	position:relative;
-	max-width: 960px;
+	max-width: 1140px;
 	margin: 0 auto;
 }
 
@@ -568,7 +568,7 @@ h4 small { font-size: 12px; }
 	padding-bottom:40px;
 }
 
-.pagemid > .inner { max-width:960px; }
+.pagemid > .inner { max-width:1140px; }
 
 .pagemid:after,
 .pagemid:before {
@@ -1167,7 +1167,7 @@ h2#site-description {
 	position: relative;
 	margin: 0 auto;
 	padding: 20px 0;
-	width: 1000px;
+	width: 1140px;
 	z-index:18;
 }
 
@@ -1571,9 +1571,11 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 .post { 
 	position: relative; 
 	/* padding-bottom: 40px; */
-	margin-bottom:40px; 
+	margin-bottom:20px; 
 	padding: 15px 0 15px 15px;
 	display: inline-block;
+	border-bottom: 1px solid #dddddd;
+	width: 1140px;
 }
 
 .post .quote {
@@ -1590,7 +1592,7 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 
 .post .entry-content{
 	float: left;
-    width: 558px;
+    width: 800px;
 }
 
 
@@ -1610,7 +1612,7 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 }
 
 .post .postimg { 
-	margin-bottom:15px; 
+	/* margin-bottom:15px; */
 	position: relative;
     float: left;
     margin-right: 20px;

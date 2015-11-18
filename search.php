@@ -1,5 +1,4 @@
 <?php 
-	global $atp_readmoretxt;
 	
 	//Includes the header.php template file from your current theme's directory
 	get_header(); 

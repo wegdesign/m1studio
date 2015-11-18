@@ -1,4 +1,6 @@
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php 
+
+if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
 	<?php $format = get_post_format($post->ID);?>
 	
@@ -29,7 +31,7 @@
 						<?php the_excerpt(); ?>
 						
 						<?php if ( $format != 'quote'   && $format != 'aside' ) { ?>
-						<a class="more-link" href="<?php the_permalink() ?>"><?php echo atp_localize($atp_readmoretxt, '', '');?></a>
+						<a class="more-link" href="<?php the_permalink() ?>">Read More</a>
 						<?php  } ?>
 					
 					</div>
