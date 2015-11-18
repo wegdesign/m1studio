@@ -1,6 +1,7 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
 	<?php $format = get_post_format($post->ID);?>
+	
 	<?php if( false === $format ) { $format = 'standard'; } ?>
 
 	<div <?php post_class();?> id="post-<?php the_ID(); ?>">
@@ -12,14 +13,14 @@
 			?>
 			<div class="postimg">
         		<figure>
-					<a title="<?php printf(__('Permanent Link to %s', 'm1studio'), get_the_title()); ?>" href="<?php the_permalink(); ?>">
+					<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
 						<?php echo atp_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
 					</a>
 				</figure>
 			</div>
 			<?php } ?>
 			<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
-				<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( "Permanent Link to %s", 'm1studio' ), esc_attr( get_the_title() ) ); ?>">
+				<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>">
 				<?php the_title(); ?></a></h2>
 				<?php } ?>
 

@@ -22,12 +22,6 @@
 
 			<?php endwhile; ?>
 
-			<?php 
-			$comments = get_option('atp_commentstemplate');
-			if ( $comments == 'pages' ||  $comments == 'both' ) {
-				comments_template( '', true ); 
-			}?>
-
 		</div><!-- .content-area -->
 
 		<?php if ( atp_generator( 'sidebaroption', $post->ID ) != 'fullwidth' ) { get_sidebar(); } ?>
