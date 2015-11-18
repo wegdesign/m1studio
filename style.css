@@ -1575,7 +1575,7 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 	padding: 15px 0 15px 15px;
 	display: inline-block;
 	border-bottom: 1px solid #dddddd;
-	width: 1140px;
+	width: calc(100% - 25px);
 }
 
 .post .quote {
@@ -1617,6 +1617,14 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
     float: left;
     margin-right: 20px;
     width: 277px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
 }
 .post_content .flexslider,
 .post_content .video-frame { margin-bottom:20px; } 
