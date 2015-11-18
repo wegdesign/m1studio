@@ -559,7 +559,7 @@ h4 small { font-size: 12px; }
 	background-color: rgba(255, 255, 255, 1);
 	padding: 40px 0 0 0;
 	position:relative;
-	z-index:17;
+	z-index:9;
 }
 
 .pagemid {
@@ -1151,7 +1151,7 @@ h2#site-description {
 	right: 0;
 	margin: 0 auto;
 	overflow: hidden;
-	z-index: 100;
+	z-index: 9;
 	background-color: #f0f0f0;
 }
 
@@ -1572,10 +1572,10 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 	position: relative; 
 	/* padding-bottom: 40px; */
 	margin-bottom:20px; 
-	padding: 15px 0 15px 15px;
-	display: inline-block;
-	border-bottom: 1px solid #dddddd;
-	width: calc(100% - 25px);
+	/* padding: 15px 0 15px 15px; */
+	/* display: inline-block; */
+	/* border-bottom: 1px solid #dddddd; */
+	background-color: rgba(11, 11, 11, 0.1);
 }
 
 .post .quote {
@@ -1592,15 +1592,15 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 
 .post .entry-content{
 	float: left;
-    width: 800px;
+    width: 100%;
 }
 
 
 .post h2.entry-title {
 	text-transform: none !important;
 	margin: 0 0 10px 0 !important;
-	line-height:1.3em;
-	font-size: 21px;
+	line-height: 1.8em;
+    font-size: 24px;
 }
 
 .post .sub-title {
@@ -1617,7 +1617,6 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
     float: left;
     margin-right: 20px;
     width: 277px;
-    margin-bottom: 10px;
     padding: 5px;
     background-color: #FFFFFF;
     border: 1px solid #dddddd;
@@ -1626,6 +1625,16 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
 }
+
+
+.post_content{
+	padding: 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
 .post_content .flexslider,
 .post_content .video-frame { margin-bottom:20px; } 
 .post-info  {
@@ -1639,7 +1648,7 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 .post-metadata { overflow:hidden; font-size: 11px; font-weight: bold; text-transform: uppercase; }
 .post-metadata span { padding:0 10px; }
 .post-metadata span:first-child { padding-left:0; }
-.post-entry { clear:both; position:relative; }
+.post-entry { /* clear:both; */ position:relative; }
 .comments-title {margin-bottom: 30px;}
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */

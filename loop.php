@@ -9,23 +9,17 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div <?php post_class();?> id="post-<?php the_ID(); ?>">
 		<div class="post_content">
 			
-			<?php get_template_part( 'utils/includes/' . $format ); ?>
 			
-			<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
-				<div class="entry-content">
-					<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>">
-					<?php the_title(); ?></a></h2>
-					<?php } ?>
-	
-					<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
-					<div class="post-info">
-						<?php if( $format != 'aside' && $format != 'quote' ){?>
-						<?php echo atp_generator('postmetaStyle'); ?>
-						<?php } ?>
-					</div><!-- .post-info -->
-					<?php } ?>
+			<div class="entry-content">
+				<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
+					<h2 class="entry-title">
+						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
+					</h2>
+				<?php } ?>
+				
+				<?php get_template_part( 'utils/includes/' . $format ); ?>
 					
-					<?php if ( $format != 'quote' ){ ?>
+				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">
 						
 						<?php the_excerpt(); ?>
@@ -35,8 +29,19 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<?php  } ?>
 					
 					</div>
-				</div>
+				
+				<?php } ?>	
+				
+				<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
+					<div class="post-info">
+						<?php if( $format != 'aside' && $format != 'quote' ){?>
+						<?php echo atp_generator('postmetaStyle'); ?>
+						<?php } ?>
+					</div><!-- .post-info -->
 				<?php } ?>
+					
+					
+				</div>
 		</div>
 	</div>
 
