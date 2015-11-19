@@ -1595,6 +1595,10 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
     width: 100%;
 }
 
+.post .archive-itemcontent{
+	
+}
+
 
 .post h2.entry-title {
 	text-transform: none !important;
