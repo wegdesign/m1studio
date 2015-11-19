@@ -9,37 +9,33 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div <?php post_class();?> id="post-<?php the_ID(); ?>">
 		<div class="post_content">
 			<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
-					<h2 class="entry-title">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
-					</h2>
+				<h2 class="entry-title">
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
+				</h2>
 			<?php } ?>
-			
 			<div class="entry-content">
 				
 				<?php get_template_part( 'utils/includes/' . $format ); ?>
 					
 				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">
-						<p>
+						<div class="post-excerpt">
 							<?php the_excerpt(); ?>
-						</p>
+						</div>
 					</div>
 				
 				<?php } ?>	
-				
-				<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
-					<p class="post-info">
-						<?php if( $format != 'aside' && $format != 'quote' ){?>
-						<?php echo atp_generator('postmetaStyle'); ?>
-						<?php } ?>
-						<?php if ( $format != 'quote'   && $format != 'aside' ) { ?>
-						<a class="more-link" href="<?php the_permalink() ?>">Read More</a>
-						<?php  } ?>
-					</p><!-- .post-info -->
+			</div>
+		<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
+			<div class="post-info">
+				<?php if( $format != 'aside' && $format != 'quote' ){?>
+					<?php echo atp_generator('postmetaStyle'); ?>
 				<?php } ?>
-					
-					
-				</div>
+				<?php if ( $format != 'quote'   && $format != 'aside' ) { ?>
+					<a class="more-link" href="<?php the_permalink() ?>">Read More</a>
+				<?php  } ?>
+			</div><!-- .post-info -->
+		<?php } ?>		
 		</div>
 	</div>
 

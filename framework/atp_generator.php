@@ -440,18 +440,14 @@
 		function postmetaStyle() {
 			global $format;
 			ob_start();
-			$out = '<div class="post-metadata">'; 
 			echo '<span>';
 			the_time(get_option('date_format'));
-			echo '</span>/<span>By ';
+			echo '</span> / <span>By ';
             the_author_posts_link(); 
-			echo '</span>/<span>In ';
+			echo '</span> / <span>In ';
 			the_category(', ') ; 
-			echo '</span>/<span> ';
-			comments_popup_link( __( '0 Comment', 'musicplay' ), __( '1 Comment', 'musicplay' ), __( '% Comments', 'musicplay' ) );
 			echo '</span>';
 			$out .= ob_get_clean();
-			$out .= '</div>';
 			return $out;;
 		}
 
