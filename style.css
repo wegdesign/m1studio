@@ -1653,6 +1653,10 @@ ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
    
 }
 
+.post .postimg .imgborder {
+	width: 100%;
+}
+
 .post_content{
 	/*padding: 15px;
     position: relative;

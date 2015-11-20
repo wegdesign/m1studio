@@ -15,38 +15,38 @@ get_header(); ?>
 			<?php if ( false === $format ) { $format = 'standard'; } ?>
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div <?php post_class('post');?> id="post-<?php the_ID(); ?>">
+				<div <?php post_class();?> id="post-<?php the_ID(); ?>">
 				<div class="post_content">
-
-					<?php 
-					if( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
-						global $post_id;
-						$img_alt_title 	= get_the_title();
-					?>
-					<div class="postimg">
-        				<figure>
-							<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
-								<?php echo atp_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
-							</a>
-						</figure>
-					</div>
+					<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
+						<h2 class="entry-title">
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
+						</h2>
 					<?php } ?>
-
-					<?php if( $format != 'quote') { ?>
-					<h2 class="entry-title"><?php the_title(); ?></h2>
-					<?php } ?>
-
-					
+					<div class="entry-content">
 						
-					<div class="post-entry">
-						<?php the_content();?>
-
-						<?php the_tags('<div class="tags">'.__('<strong>Tags</strong>','m1studio').': ',',&nbsp; ','</div>');?>
-						<?php get_template_part('utils/share','link'); ?>
-					</div><!-- .post-entry -->
-
-				</div><!-- .post-content -->
-			</div><!-- #post-<?php the_ID(); ?> -->
+						<?php get_template_part( 'utils/includes/' . $format ); ?>
+							
+						<?php if ( $format != 'quote' ){ ?>
+							<div class="post-entry">
+								<div class="post-excerpt">
+									<?php the_excerpt(); ?>
+								</div>
+							</div>
+						
+						<?php } ?>	
+					</div>
+				<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
+					<div class="post-info">
+						<?php if( $format != 'aside' && $format != 'quote' ){?>
+							<?php echo atp_generator('postmetaStyle'); ?>
+						<?php } ?>
+						<?php if ( $format != 'quote'   && $format != 'aside' ) { ?>
+							<a class="more-link" href="<?php the_permalink() ?>">Read More</a>
+						<?php  } ?>
+					</div><!-- .post-info -->
+				<?php } ?>		
+				</div>
+			</div>
 
 			
 			
