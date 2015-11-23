@@ -11,10 +11,13 @@
 		<title><?php 	bloginfo( 'name' ); ?></title>
 		<meta name="description" content="<?php  get_bloginfo('description', 'display'); ?>">
 		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/social.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css" />
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<div id="bodybg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/main_bg.jpg)"></div>
 		<div id="boxed">
 			<div id="wrapper">
 				<div class="topbar">
@@ -23,10 +26,18 @@
 							TOPBAR_LEFT
 						</div>
 						<div class="topbar_right">
-							<div id="social-icons">
-								<!-- social -->
-								social
-							</div>
+							<a class="icon-link round-corner facebook"><i class="fa fa-facebook"></i></a>
+							<a class="icon-link round-corner tumblr "><i class="fa fa-tumblr"></i></a>
+							<a class="icon-link round-corner linkedin "><i class="fa fa-linkedin"></i></a>
+							<a class="icon-link round-corner twitter "><i class="fa fa-twitter"></i></a>
+							<a class="icon-link round-corner google-plus "><i class="fa fa-google-plus"></i></a>
+							<a class="icon-link round-corner reddit "><i class="fa fa-reddit"></i></a>
+							<a class="icon-link round-corner youtube "><i class="fa fa-youtube"></i></a>
+							<a class="icon-link round-corner pinterest "><i class="fa fa-pinterest"></i></a>
+							<a class="icon-link round-corner github "><i class="fa fa-github"></i></a>
+							<a class="icon-link round-corner envelope "><i class="fa fa-envelope"></i></a>
+							<a class="icon-link round-corner soundcloud"><i class="fa fa-soundcloud"></i></a>
+
 						</div>
 					</div><!-- inner -->
 				</div><!-- topbar -->
@@ -35,12 +46,12 @@
 					<div class="inner">
 
 						<div class="logo">
-							LOGO
+							<?php atp_generator( 'logo' ); ?>
 						</div>
 						<!-- logo -->
 		
 						<div class="primarymenu menuwrap">
-							MENU
+							<?php atp_generator( 'atp_primary_menu' ); ?>
 						</div>
 					</div>
 					<!-- inner-->

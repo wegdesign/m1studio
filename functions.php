@@ -142,4 +142,12 @@ function aq_resize( $url, $width, $height = null, $crop = null, $single = true )
 	
 	return $image;
 }
+
+
+add_theme_support( 'menus' );
+
+register_nav_menus( array(
+    'primary-menu' => 'Primary Menu'
+) );
+
 ?>

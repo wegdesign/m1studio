@@ -386,7 +386,24 @@ blockquote {
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
 body { margin:0; padding:0; }
-#bodybg {  height:100%; width:100%; position:fixed; top:0; z-index:-1;}
+#bodybg {  
+background-attachment: fixed;
+background-color: rgb(51, 51, 51);
+background-position: 50% 50%;
+background-repeat: no-repeat;
+box-sizing: border-box;
+color: rgb(68, 68, 68);
+display: block;
+height: 100%;
+left: 0px;
+line-height: 22.4px;
+min-height: 100%;
+min-width: 100%;
+position: fixed;
+top: 0px;
+width: 100%;
+z-index: -1;
+}
 
 body, input, select, textarea  { 
 	font: normal 13px/1.6 'Helvetica-Neue', Helvetica, Arial, Sans-serif;
@@ -508,13 +525,24 @@ h4 small { font-size: 12px; }
 #boxed #wrapper {
 	position: relative;
 	width: 1280px;
-	margin: 40px auto;
+	margin: 0px auto;
 }
 
 .inner {
 	position:relative;
 	max-width: 1140px;
 	margin: 0 auto;
+}
+
+
+#header .inner{
+	display: table;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    min-height: 88px;
+    height: 80px;
+	
 }
 
 .one_half		{ width: 48%; }
@@ -670,7 +698,6 @@ padding:10px;
 	float: left;
 	min-width: 100px;
 	padding: 0;
-	margin: 10px auto;
 	vertical-align: middle;
 }
 .logo a { display:block;}
@@ -728,8 +755,10 @@ h2#site-description {
 .header { position:relative; z-index: 20;}
 #header{
 	padding: 10px 0;
-	background-color: #0CAED4;
+	background-color: #333;
 }
+
+
 
 
 /* Topbar =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -742,6 +771,7 @@ h2#site-description {
 	overflow: hidden;
 	background: #555555;
 	color: #FFFFFF;
+	height: 35px;
 }
 
 .topbar .topbar_left,
@@ -769,11 +799,12 @@ h2#site-description {
 /* Primary Menu  */
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 .menuwrap {
-	float: right;
 	font-family:  'Helvetica-Neue', Helvetica, Arial, Sans-serif;
-	margin: 16px auto 0 auto;
 	position: relative; 
 	padding: 0;
+	display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
 }
 
 #menu-trigger { display:none}
@@ -813,7 +844,7 @@ h2#site-description {
 
 /*** DEMO SKIN ***/
 .sf-menu {
-	float: left;
+	float: right;
 }
 .sf-menu ul {
 	box-shadow: 0px 2px 6px rgba(0,0,0,.2);
@@ -829,14 +860,14 @@ h2#site-description {
 	zoom: 1; /* IE7 */
 }
 .sf-menu a {
-	font-size:12px;
-	color: #666666;
+
+	color: #ffffff;
 }
 .sf-menu li:hover, 
 .sf-menu li.sfHover,
 .sf-menu a:focus, 
 .sf-menu a:hover, 
-.sf-menu a:active { color: #222222; outline:none; }
+.sf-menu a:active { color: yellow; outline:none; }
 
 .sf-menu li {
 	background: transparent;
@@ -846,7 +877,7 @@ h2#site-description {
 	transition: background .2s;
 }
 
-.sf-menu ul { background: #ffffff;}
+.sf-menu ul { background: #333;}
 .sf-menu ul li {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
@@ -1167,7 +1198,7 @@ h2#site-description {
 	position: relative;
 	margin: 0 auto;
 	padding: 20px 0;
-	width: 1140px;
+	width: 100%;
 	z-index:18;
 }
 
@@ -1218,13 +1249,13 @@ h2#site-description {
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
 #footer {
-	color: #333333;
+	color: #fff;
 	position: relative;
 	overflow: hidden;
-	margin: 20px auto;
+	margin: 0px auto 100px auto;;
 	padding: 30px 0;
 	font-size: 12px;
-	background-color: #90D0D8;
+	background-color: #333;
 }
 #footer ul li{
 	font-size: 12px;
@@ -1473,55 +1504,18 @@ ul.atpsocials {
 ul.atpsocials li img { position: relative; 	vertical-align: text-top;}
 ul.atpsocials li { 
 	display: inline-block; 
-	padding: 1px; 
-	margin: 0 3px 3px 0; 
+	padding: 1px;  
 	line-height: 35px; 
 	text-align: center;
-	width: 35px;
-	height: 35px;
 	cursor: pointer;
 	-webkit-transition: all 300ms ease-in;
 	-moz-transition:    all 300ms ease-in;
 	-o-transition:      all 300ms ease-in;
 	-ms-transition:     all 300ms ease-in;
 	transition:         all 300ms ease-in;
+	
 }
 
-ul.atpsocials li a.blogger		{ background: url(images/sociables/blogger_bio.png) center center no-repeat; }
-ul.atpsocials li a.delicious	{ background: url(images/sociables/delicious_bio.png) center center no-repeat; }
-ul.atpsocials li a.deviant		{ background: url(images/sociables/deviant_bio.png) center center no-repeat; }
-ul.atpsocials li a.digg			{ background: url(images/sociables/digg_bio.png) center center no-repeat; }
-ul.atpsocials li a.facebook		{ background: url(images/sociables/facebook_bio.png) center center no-repeat; }
-ul.atpsocials li a.flickr		{ background: url(images/sociables/flickr_bio.png) center center no-repeat; }
-ul.atpsocials li a.forrst		{ background: url(images/sociables/forrst_bio.png) center center no-repeat; }
-ul.atpsocials li a.google		{ background: url(images/sociables/google_bio.png) center center no-repeat; }
-ul.atpsocials li a.linkedin		{ background: url(images/sociables/linkedin_bio.png) center center no-repeat; }
-ul.atpsocials li a.pinterest	{ background: url(images/sociables/pinterest_bio.png) center center no-repeat; }
-ul.atpsocials li a.rss			{ background: url(images/sociables/rss_bio.png) center center no-repeat; }
-ul.atpsocials li a.skype		{ background: url(images/sociables/skype_bio.png) center center no-repeat; }
-ul.atpsocials li a.stumbleupon	{ background: url(images/sociables/stumbleupon_bio.png) center center no-repeat; }
-ul.atpsocials li a.twitter		{ background: url(images/sociables/twitter_bio.png) center center no-repeat; }
-ul.atpsocials li a.dribbble		{ background: url(images/sociables/dribbble_bio.png) center center no-repeat; }
-ul.atpsocials li a.vimeo		{ background: url(images/sociables/vimeo_bio.png) center center no-repeat; }
-ul.atpsocials li a.yahoo		{ background: url(images/sociables/yahoo_bio.png) center center no-repeat; }
-ul.atpsocials li a.youtube		{ background: url(images/sociables/youtube_bio.png) center center no-repeat; }
-
-ul.atpsocials li.facebook:hover	{ background-color:#3B5998; }
-ul.atpsocials li.twitter:hover		{ background-color:#00A0D1; }
-ul.atpsocials li.dribbble:hover		{ background-color:#ea4c88; }
-ul.atpsocials li.flickr:hover		{ background-color:#FE0883; }
-ul.atpsocials li.deviant:hover		{ background-color:#5C7062; }
-ul.atpsocials li.blogger:hover		{ background-color:#FF8833; }
-ul.atpsocials li.google:hover		{ background-color:#C63D2D; }
-ul.atpsocials li.linkedin:hover		{ background-color:#4875B4; }
-ul.atpsocials li.pinterest:hover	{ background-color:#910101; }
-ul.atpsocials li.reditt:hover		{ background-color:#CEE3F8; }
-ul.atpsocials li.rss:hover			{ background-color:#FA9B39; }
-ul.atpsocials li.stumbleupon:hover 	{ background-color:#EB4924; }
-ul.atpsocials li.tumblr:hover		{ background-color:#34526F; }
-ul.atpsocials li.youtube:hover		{ background-color:#C4302B; }
-ul.atpsocials li.vimeo:hover		{ background-color:#0caed4; }
-ul.atpsocials li.digg:hover			{ background-color:#910101; }
 
 ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
 
@@ -3115,6 +3109,8 @@ span.buy a {
 	z-index:99;
 	right:0;
 }
+
+
 
 
 
