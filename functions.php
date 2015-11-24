@@ -3,6 +3,8 @@
 
 	require_once( get_template_directory() . '/framework/atp_generator.php' );
 	require_once( get_template_directory() . '/framework/pagination.php' );	
+	require_once( get_template_directory() . '/framework/admin/theme-admin.php' );	
+	
 
 	// Attivo le immagini in evidenza
 	add_theme_support('post-thumbnails');

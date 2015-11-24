@@ -46,6 +46,7 @@
 					<div class="inner">
 
 						<div class="logo">
+							<?php echo m1studio_get_option( 'example_uploader' ,'-----') ?>
 							<?php atp_generator( 'logo' ); ?>
 						</div>
 						<!-- logo -->
