@@ -1,19 +1,26 @@
 <!-- Inizio Header -->
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html lang="en"> <![endif]-->
-<!--[if IE 7]>    <html lang="en"> <![endif]-->
-<!--[if IE 8]>    <html lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 6]>
+<html id="ie6" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title><?php 	bloginfo( 'name' ); ?></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<title><?php 	bloginfo('name'); ?></title>
 		<meta name="description" content="<?php  get_bloginfo('description', 'display'); ?>">
 		<link rel="shortcut icon" href="" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/social.css" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css" />
+		<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -26,18 +33,7 @@
 							TOPBAR_LEFT
 						</div>
 						<div class="topbar_right">
-							<a class="icon-link round-corner facebook"><i class="fa fa-facebook"></i></a>
-							<a class="icon-link round-corner tumblr "><i class="fa fa-tumblr"></i></a>
-							<a class="icon-link round-corner linkedin "><i class="fa fa-linkedin"></i></a>
-							<a class="icon-link round-corner twitter "><i class="fa fa-twitter"></i></a>
-							<a class="icon-link round-corner google-plus "><i class="fa fa-google-plus"></i></a>
-							<a class="icon-link round-corner reddit "><i class="fa fa-reddit"></i></a>
-							<a class="icon-link round-corner youtube "><i class="fa fa-youtube"></i></a>
-							<a class="icon-link round-corner pinterest "><i class="fa fa-pinterest"></i></a>
-							<a class="icon-link round-corner github "><i class="fa fa-github"></i></a>
-							<a class="icon-link round-corner envelope "><i class="fa fa-envelope"></i></a>
-							<a class="icon-link round-corner soundcloud"><i class="fa fa-soundcloud"></i></a>
-
+							<?php theme_social_link(); ?>
 						</div>
 					</div><!-- inner -->
 				</div><!-- topbar -->
@@ -46,13 +42,12 @@
 					<div class="inner">
 
 						<div class="logo">
-							<?php echo m1studio_get_option( 'example_uploader' ,'-----') ?>
-							<?php atp_generator( 'logo' ); ?>
+							<?php theme_logo(); ?>
 						</div>
 						<!-- logo -->
 		
 						<div class="primarymenu menuwrap">
-							<?php atp_generator( 'atp_primary_menu' ); ?>
+							<?php theme_primary_menu(); ?>
 						</div>
 					</div>
 					<!-- inner-->
@@ -72,27 +67,29 @@
 						</div>
 					</div>
 					
-					<?php 
-						wp_reset_query();
-					} ?>
+					<?php
+					wp_reset_query();
+					}
+					?>
 					
-					<?php if(!is_front_page()){?>
+					<?php if(!is_front_page() && is_single() ){?>
 						<div id="subheader">
 							<div class="inner">
 								<div class="subdesc">
 									<h1 class="page-title"> 
-										<?php $postid = get_the_ID(); 
-											  $page = get_post($postid);
-											  $title = $page->post_title;
-											  echo $title;
+										<?php $postid = get_the_ID();
+										$page = get_post($postid);
+										$title = $page -> post_title;
+										echo $title;
 										?> 
 									</h1>
 								</div>
 								<div class="breadcrumbs">
-			    					<?php if(function_exists('bcn_display'))
-			    						{
-			        						bcn_display();
-			    						}?>
+			    					<?php
+									if (function_exists('bcn_display')) {
+										bcn_display();
+									}
+								?>
 								</div>
 							</div>
 						</div>

@@ -5,7 +5,7 @@
 ?>
 		<div class="postimg">
 			<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
-				<?php echo atp_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
+				<?php echo theme_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
 			</a>
 		</div>
 <?php } ?>

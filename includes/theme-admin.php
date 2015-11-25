@@ -1,7 +1,7 @@
 <?php
 
 //if no plugin Theme Options
-function m1studio_get_option( $name, $default = false ) {
+function theme_get_option( $name, $default = false ) {
 	return of_get_option($name, $default);
 }
 

@@ -15,7 +15,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php } ?>
 			<div class="entry-content">
 				
-				<?php get_template_part( 'utils/includes/' . $format ); ?>
+				<?php get_template_part('includes/post-type/' . $format); ?>
 					
 				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">
@@ -29,7 +29,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php if ( get_option( 'atp_postmeta' ) != "on" ) { ?>
 			<div class="post-info">
 				<?php if( $format != 'aside' && $format != 'quote' ){?>
-					<?php echo atp_generator('postmetaStyle'); ?>
+					<?php echo theme_postmeta(); ?>
 				<?php } ?>
 				<?php if ( $format != 'quote'   && $format != 'aside' ) { ?>
 					<a class="more-link" href="<?php the_permalink() ?>">Read More</a>
@@ -42,7 +42,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <?php endwhile; ?>
 
-	<?php if(function_exists('atp_pagination')){ echo atp_pagination(); }?>
+	<?php echo theme_pagination();?>
 
 <?php else : ?>
 
