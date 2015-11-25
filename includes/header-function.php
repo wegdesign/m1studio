@@ -17,8 +17,8 @@ if(!function_exists("theme_logo")){
 				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>	</a></span></h1>
 				<h2 id="site-description"><?php echo bloginfo( 'description' ); ?></h2>
 			<?php } else { ?>
-				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php $sitename?>	</a></span></h1>
-				<h2 id="site-description"><?php echo $tagline ?></h2>
+				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo $theme_sitename ?></a></span></h1>
+				<h2 id="site-description"><?php echo $theme_tagline ?></h2>
 			<?php } ?>
 		<?php }else { ?>
 			<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">

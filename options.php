@@ -27,6 +27,10 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
+	$shortname = "theme";
+
+	$optLogotype = array('imagelogo' => __('Image logo', 'm1studio'), 'textlogo' => __('Text-based logo', 'm1studio'));
+
 	// Test data
 	$test_array = array('one' => __('Prova', 'm1studio'), 'two' => __('Two', 'm1studio'), 'three' => __('Three', 'm1studio'), 'four' => __('Four', 'm1studio'), 'five' => __('Five', 'm1studio'));
 
@@ -140,14 +144,40 @@ function optionsframework_options() {
 
 	$options[] = array('name' => __('Additional Text Editor', 'm1studio'), 'desc' => sprintf(__('This editor includes media button.', 'm1studio'), 'http://codex.wordpress.org/Function_Reference/wp_editor'), 'id' => 'example_editor_media', 'type' => 'editor', 'settings' => $wp_editor_settings);
 
+
+	//Headers
 	$options[] = array('name' => __('Headers', 'm1studio'), 'type' => 'heading');
-
-	$options[] = array('name' => __('Footer', 'm1studio'), 'type' => 'heading');
-
+	$options[] = array('name' => __('Logo Type', 'm1studio'), 'desc' => __('If text-based logo is activated, enter the sitename and tagline in the fields below.', 'm1studio'), 'id' => $shortname . "_logo_type", 'std' => 'imagelogo', 'type' => 'select', 'class' => 'mini', //mini, tiny, small
+	'options' => $optLogotype);
+	$options[] = array( 'name' => __('Site name', 'm1studio'),
+		'desc' => __('Put your sitename in here.', 'm1studio'),
+		'id' => $shortname."_site_name",
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array( 'name' => __('Tagline', 'm1studio'),
+		'desc' => __('Put your tagline in here.', 'm1studio'),
+		'id' => $shortname."_tagline",
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array( 'name' => __('Logo Image', 'm1studio'),
+		'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'),
+		'id' => $shortname."_logo_image",
+		'type' => 'upload');
+	
+	$options[] = array( 'name' => __('Favicon', 'm1studio'),
+		'desc' => __('Upload the favicon image.', 'm1studio'),
+		'id' => $shortname."_favicon",
+		'type' => 'upload');
+	
+	
+	
+		$options[] = array('name' => __('Footer', 'm1studio'), 'type' => 'heading');
 
 	//Social
 	$options[] = array('name' => __('Sociable', 'm1studio'), 'type' => 'heading');
-	
+
 	$options[] = array('name' => __('Facebook Link', 'm1studio'), 'id' => 'facebook', 'std' => '', 'type' => 'text');
 	$options[] = array('name' => __('Tumblr Link', 'm1studio'), 'id' => 'tumblr', 'std' => '', 'type' => 'text');
 	$options[] = array('name' => __('Linkedin Link', 'm1studio'), 'id' => 'linkedin', 'std' => '', 'type' => 'text');
@@ -159,9 +189,6 @@ function optionsframework_options() {
 	$options[] = array('name' => __('GitHub Link', 'm1studio'), 'id' => 'github', 'std' => '', 'type' => 'text');
 	$options[] = array('name' => __('Your Mail', 'm1studio'), 'id' => 'envelope', 'std' => '', 'type' => 'text');
 	$options[] = array('name' => __('SoundCloud', 'm1studio'), 'id' => 'soundcloud', 'std' => '', 'type' => 'text');
-	
-	
-	
 
 	$options[] = array('name' => __('Sharing', 'm1studio'), 'type' => 'heading');
 
