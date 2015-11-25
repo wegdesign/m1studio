@@ -114,7 +114,7 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Input Text', 'm1studio'),
+		'name' => __('Input Text ', 'm1studio'),
 		'desc' => __('A text input field.', 'm1studio'),
 		'id' => 'example_text',
 		'std' => 'Default Value',
