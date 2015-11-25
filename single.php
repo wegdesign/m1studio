@@ -52,7 +52,7 @@ get_header();
 				</div>
 			</div>
 
-			
+			<?php echo share_link() ?>
 			
 			<div id="nav-below" class="navigation">
 				<div class="nav-previous"><?php previous_post_link('&larr; %link') ?></div>

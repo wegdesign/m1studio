@@ -30,7 +30,7 @@
 				<div class="topbar">
 					<div class="inner">
 						<div class="topbar_left ">
-							TOPBAR_LEFT
+							<?php if(theme_get_option( 'topbar_left' ) != ""){ echo theme_get_option( 'topbar_left' ); }?>
 						</div>
 						<div class="topbar_right">
 							<?php theme_social_link(); ?>

@@ -18,11 +18,11 @@
 		</div><!-- .footer-sidebar -->
 		<div class="copyright clearfix">
 			<div class="copyright_left">
-
+				<?php if(theme_get_option( 'copyright_left' ) != ""){ echo theme_get_option( 'copyright_left' ); }?>
 			</div>
 			<!-- .copyright_left -->
 			<div class="copyright_right">
-
+				<?php if(theme_get_option( 'copyright_right' ) != ""){ echo theme_get_option( 'copyright_right' ); }?>
 			</div>
 			<!-- .copyright_left -->
 		</div>

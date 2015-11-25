@@ -29,7 +29,7 @@ function optionsframework_options() {
 
 	$shortname = "theme";
 
-	$optLogotype = array('imagelogo' => __('Image logo', 'm1studio'), 'textlogo' => __('Text-based logo', 'm1studio'));
+	$optLogotype = array('imagelogo' => __('Logo', 'm1studio'), 'textlogo' => __('Title', 'm1studio'));
 
 	// Test data
 	$test_array = array('one' => __('Prova', 'm1studio'), 'two' => __('Two', 'm1studio'), 'three' => __('Three', 'm1studio'), 'four' => __('Four', 'm1studio'), 'five' => __('Five', 'm1studio'));
@@ -77,6 +77,9 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array('name' => __('General', 'm1studio'), 'type' => 'heading');
+	
+	
+	
 
 	$options[] = array('name' => __('Input Text Mini', 'm1studio'), 'desc' => __('A mini text input field.', 'm1studio'), 'id' => 'example_text_mini', 'std' => 'Default', 'class' => 'mini', 'type' => 'text');
 
@@ -144,36 +147,48 @@ function optionsframework_options() {
 
 	$options[] = array('name' => __('Additional Text Editor', 'm1studio'), 'desc' => sprintf(__('This editor includes media button.', 'm1studio'), 'http://codex.wordpress.org/Function_Reference/wp_editor'), 'id' => 'example_editor_media', 'type' => 'editor', 'settings' => $wp_editor_settings);
 
-
 	//Headers
 	$options[] = array('name' => __('Headers', 'm1studio'), 'type' => 'heading');
-	$options[] = array('name' => __('Logo Type', 'm1studio'), 'desc' => __('If text-based logo is activated, enter the sitename and tagline in the fields below.', 'm1studio'), 'id' => $shortname . "_logo_type", 'std' => 'imagelogo', 'type' => 'select', 'class' => 'mini', //mini, tiny, small
+	
+	$options[] = array('name' => __('Custom Logo', 'm1studio'), 'desc' => __('If text-based logo is activated, enter the sitename and tagline in the fields below.', 'm1studio'), 'id' => $shortname . "_logo_type", 'std' => 'imagelogo', 'type' => 'select', 'class' => 'mini', //mini, tiny, small
 	'options' => $optLogotype);
-	$options[] = array( 'name' => __('Site name', 'm1studio'),
-		'desc' => __('Put your sitename in here.', 'm1studio'),
-		'id' => $shortname."_site_name",
-		'std' => '',
-		'type' => 'text');
+	$options[] = array('name' => __('Site name', 'm1studio'), 'desc' => __('Put your sitename in here.', 'm1studio'), 'id' => $shortname . "_site_name", 'std' => '', 'type' => 'text');
+
+	$options[] = array('name' => __('Tagline', 'm1studio'), 'desc' => __('Put your tagline in here.', 'm1studio'), 'id' => $shortname . "_tagline", 'std' => '', 'type' => 'text');
+
+	$options[] = array('name' => __('Logo Image', 'm1studio'), 'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'), 'id' => $shortname . "_logo_image", 'type' => 'upload');
+
+	$options[] = array('name' => __('Custom Favicon', 'm1studio'), 'desc' => __('Upload the favicon image.', 'm1studio'), 'id' => $shortname . "_favicon", 'type' => 'upload');
+
+	$options[] = array('name' => __('Body Background', 'm1studio'), 'desc' => __('Select the Background Image for Body and assign its Properties according to your requirements.', 'm1studio'), 'id' => 'bg_image', 'std' => $background_defaults, 'type' => 'background');
 	
-	$options[] = array( 'name' => __('Tagline', 'm1studio'),
-		'desc' => __('Put your tagline in here.', 'm1studio'),
-		'id' => $shortname."_tagline",
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array( 'name' => __('Logo Image', 'm1studio'),
-		'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'),
-		'id' => $shortname."_logo_image",
-		'type' => 'upload');
-	
-	$options[] = array( 'name' => __('Favicon', 'm1studio'),
-		'desc' => __('Upload the favicon image.', 'm1studio'),
-		'id' => $shortname."_favicon",
-		'type' => 'upload');
+	$options[] = array('name' => __('Topbar Left', 'm1studio'), 
+						'desc' => __('Custom HTML and Text that will appear in the Topbar in Left side.', 'm1studio'), 
+						'id' => 'topbar_left', 
+						'std' => '', 
+						'type' => 'textarea');
 	
 	
+	$options[] = array('name' => __('Footer', 'm1studio'), 'type' => 'heading');
 	
-		$options[] = array('name' => __('Footer', 'm1studio'), 'type' => 'heading');
+	
+	$options[] = array('name' => __('Copyright Left Content', 'm1studio'), 
+						'desc' => __('Enter the content that you wish the display on the footer Left side', 'm1studio'), 
+						'id' => 'copyright_left', 
+						'std' => '', 
+						'type' => 'textarea');
+						
+	$options[] = array('name' => __('Copyright Right Content', 'm1studio'), 
+						'desc' => __('Enter the content that you wish the display on the footer Right side', 'm1studio'), 
+						'id' => 'copyright_right', 
+						'std' => '', 
+						'type' => 'textarea');
+	
+	$options[] = array('name' => __('Google Analytics', 'm1studio'), 
+						'desc' => __('Paste your Google Analytics code here which starts from tag script here. This will be added into the footer of your theme.', 'm1studio'), 
+						'id' => 'google_analytics', 
+						'std' => '', 
+						'type' => 'textarea');
 
 	//Social
 	$options[] = array('name' => __('Sociable', 'm1studio'), 'type' => 'heading');
@@ -191,6 +206,13 @@ function optionsframework_options() {
 	$options[] = array('name' => __('SoundCloud', 'm1studio'), 'id' => 'soundcloud', 'std' => '', 'type' => 'text');
 
 	$options[] = array('name' => __('Sharing', 'm1studio'), 'type' => 'heading');
+
+	$options[] = array('name' => __('Google+', 'm1studio'), 'desc' => __('Check this to enable Google+ Icon for Post Sharing.', 'm1studio'), 'id' => 'google-plus_enabled', 'std' => '0', 'type' => 'checkbox');
+	$options[] = array('name' => __('Linkedin', 'm1studio'), 'desc' => __('Check this to enable Linkedin Icon for Post Sharing.', 'm1studio'), 'id' => 'linkedin_enabled', 'std' => '0', 'type' => 'checkbox');
+	$options[] = array('name' => __('Pinterest', 'm1studio'), 'desc' => __('Check this to enable Pinterest Icon for Post Sharing.', 'm1studio'), 'id' => 'pinterest_enabled', 'std' => '0', 'type' => 'checkbox');
+	$options[] = array('name' => __('Twitter', 'm1studio'), 'desc' => __('Check this to enable Twitter Icon for Post Sharing.', 'm1studio'), 'id' => 'twitter_enabled', 'std' => '0', 'type' => 'checkbox');
+	$options[] = array('name' => __('Facebook', 'm1studio'), 'desc' => __('Check this to enable Facebook Icon for Post Sharing.', 'm1studio'), 'id' => 'facebook_enabled', 'std' => '0', 'type' => 'checkbox');
+
 
 	return $options;
 }

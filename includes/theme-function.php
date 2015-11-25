@@ -229,4 +229,54 @@ if (!function_exists("theme_social_link")) {
 	}
 
 }
+
+
+if(!function_exists("share_link")){
+	function share_link(){
+		
+
+	echo '<strong>'._e('Share','m1studio').':</strong>';
+	
+	// Google+
+	if ( theme_get_option( 'google-plus_enabled' ) == '1' ){ ?>
+		<a class="icon-link round-corner google-plus" href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;annotation=<?php the_title(); ?>" >
+			<i class="fa fa-google-plus"></i>
+		</a>
+	<?php }
+			// Linkdedin
+			if ( theme_get_option('linkedIn_enabled') == '1' ) {
+ ?>
+ 		<a class="icon-link round-corner linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;summary=<?php the_title(); ?>" >
+			<i class="fa fa-linkedin"></i>
+		</a>
+<?php
+}
+// Pinterest
+if ( theme_get_option('pinterest_enabled') == '1') {
+ ?>
+ 		<a class="icon-link round-corner pinterest" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&title=<?php the_title(); ?> ">
+			<i class="fa fa-pinterest"></i>
+		</a>
+	<?php
+	}
+	// Twitter
+	if ( theme_get_option('twitter_enabled') == '1' ) {
+ ?>
+ <a class="icon-link round-corner twitter" href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">
+			<i class="fa fa-twitter"></i>
+		</a>
+	<?php
+	}
+	// Facebook
+	if ( theme_get_option('facebook_enabled') == '1' ){
+ ?>
+ 
+  <a class="icon-link round-corner facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>">
+			<i class="fa fa-facebook"></i>
+		</a>
+	<?php
+	}
+
+		}
+	}
 ?>
