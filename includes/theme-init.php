@@ -21,7 +21,8 @@ function theme_setup() {
 	register_nav_menus( array(
     	'primary-menu' => 'Primary Menu'
 	) );
-		
+	
+	add_filter('widget_text', 'do_shortcode');	
 }
 endif;
 ?>

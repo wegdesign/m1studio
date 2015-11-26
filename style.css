@@ -1267,7 +1267,26 @@ h2#site-description {
 	margin-bottom:30px;
 }
 
-#footer .widget-title { color: #333333; text-transform:uppercase; }
+#footer .widget-title { text-transform:uppercase; }
+
+#footer a {
+	color: #fff;
+	text-decoration: none;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+#footer a:focus {
+	outline: none;
+}
+
+#footer a:hover {
+	color: yellow;
+	text-decoration: none;
+	outline: 0;
+}
+
 
 .card-icons ul{ padding: 0; margin: 0;}
 .card-icons li{ float: right; margin-left: 5px; display: inline;}
@@ -1491,68 +1510,6 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 	transition:			all 200ms ease-in;
 }
 
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-/* Sociables */
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-
-ul.atpsocials {
-	list-style:none; 
-	margin:0; 
-	padding:0;
-} 
-
-ul.atpsocials li img { position: relative; 	vertical-align: text-top;}
-ul.atpsocials li { 
-	display: inline-block; 
-	padding: 1px;  
-	line-height: 35px; 
-	text-align: center;
-	cursor: pointer;
-	-webkit-transition: all 300ms ease-in;
-	-moz-transition:    all 300ms ease-in;
-	-o-transition:      all 300ms ease-in;
-	-ms-transition:     all 300ms ease-in;
-	transition:         all 300ms ease-in;
-	
-}
-
-
-ul.atpsocials li { background-color:#eeeeee; background-color:rgba(0,0,0,0.2); }
-
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-/* Sticky Bar */
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-
-#sticky { 
-	top: 0;
-	display: none;
-	position: relative; 
-	width: 100%; 
-	padding: 10px 0; 
-	z-index: 1000; 
-	background-color:#F6F3DA;
-	color: #222222;
-	font-size: 12px;
-	text-align: center;
-}
-
-#sticky a { }
-#sticky a:hover { text-decoration:underline; }
-
-.tarrow { 
-	position:absolute;
-	top: 5px;
-	right:10px; 
-	width: 29px; 
-	height: 41px; 
-	background: url(images/toggle_up.png) 0 0 no-repeat; 
-	z-index: 2000;
-	cursor: pointer;
-}
-
-.tarrow.active {
-	background: url('images/toggle_down.png') 0 0 no-repeat;
-}
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 /* Blog Post */

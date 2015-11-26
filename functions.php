@@ -18,4 +18,11 @@ require_once ($include_path . 'theme-function.php');
 
 //Theme Styles
 require_once ($include_path . 'theme-styles.php');
+
+//Theme Sidebar
+require_once ($include_path . 'theme-sidebar.php');
+
+//Theme Shortcode
+require_once ($include_path . 'theme-shortcode.php');
+
 ?>

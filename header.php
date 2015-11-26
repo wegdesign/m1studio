@@ -33,7 +33,7 @@
 							<?php if(theme_get_option( 'topbar_left' ) != ""){ echo theme_get_option( 'topbar_left' ); }?>
 						</div>
 						<div class="topbar_right">
-							<?php theme_social_link(); ?>
+							<?php echo theme_social_link(); ?>
 						</div>
 					</div><!-- inner -->
 				</div><!-- topbar -->
