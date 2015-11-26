@@ -34,9 +34,6 @@
 </div> <!-- /#boxed -->
 <?php wp_footer(); ?>
 
-<div id="back-top">
-	<a href="#header"><span class="fadeInUp"></span></a>
-</div>
 </body>
 </html>
 <!-- Fine Footer -->

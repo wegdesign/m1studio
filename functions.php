@@ -1,7 +1,5 @@
 <?php
 
-global $themeoptionsvalue, $meta_boxes;
-
 $include_path = get_template_directory() . '/includes/';
 
 //Header function

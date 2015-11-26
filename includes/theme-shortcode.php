@@ -1,10 +1,10 @@
 <?php
 
 
-$include_path = get_template_directory() . '/includes/shortcode/'; 
+$shortcode_path = get_template_directory() . '/includes/shortcode/'; 
 
 //Sociable
-require_once ($include_path . 'sociable.php');
+require_once ($shortcode_path . 'sociable.php');
 
 
 ?>

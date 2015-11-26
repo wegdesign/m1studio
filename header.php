@@ -55,11 +55,7 @@
 				<!-- header -->
 				<div id="ajaxwrap">
 					<?php if ( is_front_page() ){ ?>
-					<div id="featured_slider">
-						<div class="staticslider">
-							<figure><img src="<?php echo get_template_directory_uri(); ?>/images/static_image.jpg" height="430" alt="staticslider"/></figure>
-						</div><!-- staticslider -->
-					</div><!-- featured_slider -->
+					<?php echo do_shortcode("[metaslider id=71]");  ?>
 					
 					<div class="frontpage_teaser">
 						<div class="inner">
