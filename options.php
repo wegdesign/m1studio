@@ -78,8 +78,6 @@ function optionsframework_options() {
 
 	$options[] = array('name' => __('General', 'm1studio'), 'type' => 'heading');
 	
-	
-	
 
 	$options[] = array('name' => __('Input Text Mini', 'm1studio'), 'desc' => __('A mini text input field.', 'm1studio'), 'id' => 'example_text_mini', 'std' => 'Default', 'class' => 'mini', 'type' => 'text');
 
@@ -114,7 +112,7 @@ function optionsframework_options() {
 
 	$options[] = array('name' => __('Uploader Test', 'm1studio'), 'desc' => __('This creates a full size uploader that previews the image.', 'm1studio'), 'id' => 'example_uploader', 'type' => 'upload');
 
-	$options[] = array('name' => "Example Image Selector", 'desc' => "Images for layout.", 'id' => "example_images", 'std' => "2c-l-fixed", 'type' => "images", 'options' => array('1col-fixed' => $imagepath . '1col.png', '2c-l-fixed' => $imagepath . '2cl.png', '2c-r-fixed' => $imagepath . '2cr.png'));
+	$options[] = array('name' => __('Example Image Selector','m1studio'), 'desc' => "Images for layout.", 'id' => "example_images", 'std' => "2c-l-fixed", 'type' => "images", 'options' => array('1col-fixed' => $imagepath . '1col.png', '2c-l-fixed' => $imagepath . '2cl.png', '2c-r-fixed' => $imagepath . '2cr.png'));
 
 	$options[] = array('name' => __('Example Background', 'm1studio'), 'desc' => __('Change the background CSS.', 'm1studio'), 'id' => 'example_background', 'std' => $background_defaults, 'type' => 'background');
 
@@ -140,7 +138,7 @@ function optionsframework_options() {
 	$wp_editor_settings = array('wpautop' => true, // Default
 	'textarea_rows' => 5, 'tinymce' => array('plugins' => 'wordpress,wplink'));
 
-	$options[] = array('name' => __('Default Text Editor', 'm1studio'), 'desc' => sprintf(__('You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'm1studio'), 'http://codex.wordpress.org/Function_Reference/wp_editor'), 'id' => 'example_editor', 'type' => 'editor', 'settings' => $wp_editor_settings);
+	$options[] = array('name' => __('Default Text Editor ', 'm1studio'), 'desc' => sprintf(__('You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'm1studio'), 'http://codex.wordpress.org/Function_Reference/wp_editor'), 'id' => 'example_editor', 'type' => 'editor', 'settings' => $wp_editor_settings);
 
 	$wp_editor_settings = array('wpautop' => true, // Default
 	'textarea_rows' => 5, 'media_buttons' => true);
@@ -159,6 +157,18 @@ function optionsframework_options() {
 	$options[] = array('name' => __('Logo Image', 'm1studio'), 'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'), 'id' => $shortname . "_logo_image", 'type' => 'upload');
 
 	$options[] = array('name' => __('Custom Favicon', 'm1studio'), 'desc' => __('Upload the favicon image.', 'm1studio'), 'id' => $shortname . "_favicon", 'type' => 'upload');
+
+
+	$options_slider = array();
+	$options_slider_obj = find_sliders('post_title');
+	foreach ($options_slider_obj as $slider) {
+		$options_slider[$slider -> ID] = $slider -> post_title;
+	}
+
+	if ($options_slider) {
+		$options[] = array('name' => __('Select a Slider', 'm1studio'), 'desc' => __('Select Slider for HomePage', 'm1studio'), 'id' => 'slider_home', 'type' => 'select', 'options' => $options_slider);
+	}
+
 
 	$options[] = array('name' => __('Body Background', 'm1studio'), 'desc' => __('Select the Background Image for Body and assign its Properties according to your requirements.', 'm1studio'), 'id' => 'bg_image', 'std' => $background_defaults, 'type' => 'background');
 	

@@ -54,8 +54,12 @@
 				</div>
 				<!-- header -->
 				<div id="ajaxwrap">
-					<?php if ( is_front_page() ){ ?>
-					<?php echo do_shortcode("[metaslider id=71]");  ?>
+					<?php if ( is_front_page() ){ 
+						
+						theme_slider_home();
+						
+					?>
+					
 					
 					<div class="frontpage_teaser">
 						<div class="inner">

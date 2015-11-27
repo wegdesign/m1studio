@@ -235,7 +235,6 @@ if (!function_exists("theme_social_link")) {
 if(!function_exists("share_link")){
 	function share_link(){
 		
-
 	echo '<strong>'._e('Share','m1studio').':</strong>';
 	
 	// Google+
@@ -244,40 +243,52 @@ if(!function_exists("share_link")){
 			<i class="fa fa-google-plus"></i>
 		</a>
 	<?php }
-			// Linkdedin
-			if ( theme_get_option('linkedIn_enabled') == '1' ) {
- ?>
+	// Linkdedin
+	if ( theme_get_option('linkedIn_enabled') == '1' ) {
+ 	?>
  		<a class="icon-link round-corner linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;summary=<?php the_title(); ?>" >
 			<i class="fa fa-linkedin"></i>
 		</a>
-<?php
-}
-// Pinterest
-if ( theme_get_option('pinterest_enabled') == '1') {
- ?>
+	<?php }
+	// Pinterest
+	if ( theme_get_option('pinterest_enabled') == '1') {
+ 	?>
  		<a class="icon-link round-corner pinterest" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&title=<?php the_title(); ?> ">
 			<i class="fa fa-pinterest"></i>
 		</a>
-	<?php
-	}
+	<?php }
 	// Twitter
 	if ( theme_get_option('twitter_enabled') == '1' ) {
- ?>
- <a class="icon-link round-corner twitter" href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">
+	?>
+ 		<a class="icon-link round-corner twitter" href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">
 			<i class="fa fa-twitter"></i>
 		</a>
-	<?php
-	}
+	<?php }
 	// Facebook
 	if ( theme_get_option('facebook_enabled') == '1' ){
- ?>
- 
-  <a class="icon-link round-corner facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>">
+	?>
+		<a class="icon-link round-corner facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>"> 
 			<i class="fa fa-facebook"></i>
 		</a>
-	<?php
+	<?php }
 	}
+}
 
-		}
-	}
+function find_sliders($sort_key = 'post_title'){
+	
+		$args = array(
+            'post_type' => 'ml-slider',
+            'post_status' => 'publish',
+            'orderby' => $sort_key,
+            'suppress_filters' => 1, // wpml, ignore language filter
+            'order' => 'ASC',
+            'posts_per_page' => -1
+        );
+		
+		 $all_sliders = get_posts($args);
+		 
+		 return $all_sliders;
+}
+
+
 ?>

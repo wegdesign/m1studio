@@ -53,4 +53,14 @@ if(!function_exists("theme_primary_menu")){
 }
 
 
+if(!function_exists("theme_slider_home")){
+	
+	function theme_slider_home(){
+		$id = theme_get_option('slider_home');
+		
+		echo do_shortcode("[metaslider id=".$id."]"); 
+	}
+}
+
+
 ?>
