@@ -291,4 +291,9 @@ function find_sliders($sort_key = 'post_title'){
 }
 
 
+if(!function_exists("get_services")){
+		
+	
+}
+
 ?>

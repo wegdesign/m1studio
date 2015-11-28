@@ -70,6 +70,8 @@ function optionsframework_options() {
 	foreach ($options_pages_obj as $page) {
 		$options_pages[$page -> ID] = $page -> post_title;
 	}
+	
+	
 
 	// If using image radio buttons, define a directory path
 	$imagepath = get_template_directory_uri() . '/images/';
@@ -169,7 +171,6 @@ function optionsframework_options() {
 		$options[] = array('name' => __('Select a Slider', 'm1studio'), 'desc' => __('Select Slider for HomePage', 'm1studio'), 'id' => 'slider_home', 'type' => 'select', 'options' => $options_slider);
 	}
 
-
 	$options[] = array('name' => __('Body Background', 'm1studio'), 'desc' => __('Select the Background Image for Body and assign its Properties according to your requirements.', 'm1studio'), 'id' => 'bg_image', 'std' => $background_defaults, 'type' => 'background');
 	
 	$options[] = array('name' => __('Topbar Left', 'm1studio'), 
@@ -177,6 +178,23 @@ function optionsframework_options() {
 						'id' => 'topbar_left', 
 						'std' => '', 
 						'type' => 'textarea');
+	
+	
+	$options[] = array('name' => __('Services', 'm1studio'), 'type' => 'heading');
+	
+	// Pull all the pages into an array
+	$options_services = array();
+	$options_services_obj = query_posts(array( 'post_type' => 'services' ) ); 
+	$options_services[''] = 'Select Service:';
+	foreach ($options_services_obj as $service) {
+		$options_services[$service -> ID] = $service -> post_title;
+	}
+	
+	$options[] = array('name' => __('Select Service ', 'm1studio'), 'desc' => __('Select Your Service', 'm1studio'), 'id' => 'service_1', 'type' => 'select', 'options' => $options_services);
+	
+	$options[] = array('name' => __('Select Service ', 'm1studio'), 'desc' => __('Select Your Service', 'm1studio'), 'id' => 'service_2', 'type' => 'select', 'options' => $options_services);
+	
+	$options[] = array('name' => __('Select Service ', 'm1studio'), 'desc' => __('Select Your Service', 'm1studio'), 'id' => 'service_3', 'type' => 'select', 'options' => $options_services);
 	
 	
 	$options[] = array('name' => __('Footer', 'm1studio'), 'type' => 'heading');

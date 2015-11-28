@@ -20,7 +20,12 @@ require_once ($include_path . 'theme-styles.php');
 //Theme Sidebar
 require_once ($include_path . 'theme-sidebar.php');
 
+//Theme Custom
+require_once ($include_path . 'theme-custom.php');
+
+
 //Theme Shortcode
 require_once ($include_path . 'theme-shortcode.php');
+
 
 ?>
