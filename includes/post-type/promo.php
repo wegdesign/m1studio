@@ -37,5 +37,11 @@ function promos_post() {
 
 // Inizializzazione della funzione
 add_action( 'init', 'promos_post');
+
+
+
+
+
+
  
 ?>
