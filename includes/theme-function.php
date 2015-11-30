@@ -273,26 +273,63 @@ if(!function_exists("share_link")){
 	<?php }
 	}
 }
-
-function find_sliders($sort_key = 'post_title'){
-	
-		$args = array(
-            'post_type' => 'ml-slider',
-            'post_status' => 'publish',
-            'orderby' => $sort_key,
-            'suppress_filters' => 1, // wpml, ignore language filter
-            'order' => 'ASC',
-            'posts_per_page' => -1
-        );
+if(!function_exists("find_sliders")){
+	function find_sliders($sort_key = 'post_title'){
 		
-		 $all_sliders = get_posts($args);
-		 
-		 return $all_sliders;
+			$args = array(
+	            'post_type' => 'ml-slider',
+	            'post_status' => 'publish',
+	            'orderby' => $sort_key,
+	            'suppress_filters' => 1, // wpml, ignore language filter
+	            'order' => 'ASC',
+	            'posts_per_page' => -1
+	        );
+			
+			 $all_sliders = get_posts($args);
+			 
+			 return $all_sliders;
+	}
 }
-
-
-if(!function_exists("get_services")){
+if(!function_exists("home_services")){
+	function home_services(){
 		
+		$service_1 = theme_get_option('service_1');
+		$service_2 = theme_get_option('service_2');
+		$service_3 = theme_get_option('service_3');
+		
+		if($service_1 != "-" && $service_2 != "-" && $service_3 != "-" ){
+			
+			//print service 1
+			$sp1 = get_post($service_1);
+			$sp1_title = $sp1->post_title;
+			$sp1_content = $sp1->post_content;
+			$sp1_icon = get_post_meta( $sp1->ID, 'fa_field_icon', true );
+			
+			//print service 2
+			$sp2 = get_post($service_2);
+			$sp2_title = $sp2->post_title;
+			$sp2_content = $sp2->post_content;
+			$sp2_icon = get_post_meta( $sp2->ID, 'fa_field_icon', true );
+			
+			//print service 3
+			$sp3 = get_post($service_3);
+			$sp3_title = $sp3->post_title;
+			$sp3_content = $sp3->post_content;
+			$sp3_icon = get_post_meta( $sp3->ID, 'fa_field_icon', true );
+			
+			echo '<div style="padding:40px 0 ;">'.do_shortcode('
+					[one_third][servicesicon align="left" icon="' . $sp1_icon . '" title="' . $sp1_title . '"]' . $sp1_content . '[/servicesicon] [/one_third] 
+					[one_third][servicesicon align="left" icon="' . $sp2_icon . '" title="' . $sp2_title . '"]' . $sp2_content . '[/servicesicon] [/one_third]	
+					[one_third_last][servicesicon align="left" icon="' . $sp3_icon . '" title="' . $sp3_title . '"]' . $sp3_content . '[/servicesicon] [/one_third_last]
+				') . '</div>';
+			
+			
+			
+		}
+		
+	}	
+	
+	
 	
 }
 

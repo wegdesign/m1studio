@@ -63,12 +63,12 @@
 					
 					<div class="frontpage_teaser">
 						<div class="inner">
-							frontpage_teaser
+							<?php home_services(); ?>
 						</div>
 					</div>
 					
 					<?php
-					wp_reset_query();
+						wp_reset_query();
 					}
 					?>
 					
@@ -80,6 +80,10 @@
 										<?php $postid = get_the_ID();
 										$page = get_post($postid);
 										$title = $page -> post_title;
+										$icon = get_post_meta( $postid, 'fa_field_icon', true );
+										if($icon && $page->post_type == "services"){
+											echo '<i class="fa '. $icon .'  services-icon"></i>';
+										}
 										echo $title;
 										?> 
 									</h1>

@@ -1,7 +1,7 @@
 <?php
 add_action( 'after_setup_theme', 'theme_setup' );
 
-if ( ! function_exists( 'klasik_setup' ) ):
+if ( ! function_exists( 'theme_setup' ) ):
 
 function theme_setup() {
 	

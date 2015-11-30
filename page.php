@@ -14,7 +14,7 @@ get_header();
 
 				<?php the_content(); ?>
 
-				<?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'musicplay'), 'after' => '</div>')); ?>
+				<?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'm1studio'), 'after' => '</div>')); ?>
 
 </div><!-- #post-<?php the_ID(); ?> -->
 <div class="clear"></div>

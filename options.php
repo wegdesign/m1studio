@@ -184,8 +184,8 @@ function optionsframework_options() {
 	
 	// Pull all the pages into an array
 	$options_services = array();
-	$options_services_obj = query_posts(array( 'post_type' => 'services' ) ); 
-	$options_services[''] = 'Select Service:';
+	$options_services_obj = get_posts(array( 'post_type' => 'services' ) ); 
+	$options_services[''] = '-';
 	foreach ($options_services_obj as $service) {
 		$options_services[$service -> ID] = $service -> post_title;
 	}
