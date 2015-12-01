@@ -1,46 +1,146 @@
 <?php
-function promos_post() { 
-    // creazione (registrazione) del custom post type
-    register_post_type( 'promos', /* nome del custom post type */
-        // aggiungiamo ora tutte le impostazioni necessarie, in primis definiamo le varie etichette mostrate nei menù
-        array('labels' => array(
-            'name' => 'Promo', /* Nome, al plurale, dell'etichetta del post type. */
-            'singular_name' => 'Promo', /* Nome, al singolare, dell'etichetta del post type. */
-            'all_items' => 'Tutti i Promo', /* Testo mostrato nei menu che indica tutti i contenuti del post type */
-            'add_new' => 'Aggiungi nuovo', /* Il testo per il pulsante Aggiungi. */
-            'add_new_item' => 'Aggiungi nuovo Promo', /* Testo per il pulsante Aggiungi nuovo post type */
-            'edit_item' => 'Modifica Promo', /*  Testo per modifica */
-            'new_item' => 'Nuovo Promo', /* Testo per nuovo oggetto */
-            'view_item' => 'Visualizza Promo', /* Testo per visualizzare */
-            'search_items' => 'Cerca Promo', /* Testo per la ricerca*/
-            'not_found' =>  'Nessun Promo trovato', /* Testo per risultato non trovato */
-            'not_found_in_trash' => 'Nessun Promo trovato nel cestino', /* Testo per risultato non trovato nel cestino */
-            'parent_item_colon' => ''
-            ), /* Fine dell'array delle etichette */   
-            'description' => 'Raccolta di Promo del portale', /* Una breve descrizione del post type */
-            'public' => true, /* Definisce se il post type sia visibile sia da front-end che da back-end */
-            'publicly_queryable' => true, /* Definisce se possono essere fatte query da front-end */
-            'exclude_from_search' => false, /* Definisce se questo post type è escluso dai risultati di ricerca */
-            'show_ui' => true, /* Definisce se deve essere visualizzata l'interfaccia di default nel pannello di amministrazione */
-            'query_var' => true,
-            'menu_position' => 9, /* Definisce l'ordine in cui comparire nel menù di amministrazione a sinistra */
-            'menu_icon' => '', /* Scegli l'icona da usare nel menù per il posty type */
-            'rewrite'   => array( 'slug' => 'promos', 'with_front' => false ), /* Puoi specificare uno slug per gli URL */
-            'has_archive' => 'true', /* Definisci se abilitare la generazione di un archivio (equivalente di archive-libri.php) */
-            'capability_type' => 'post', /* Definisci se si comporterà come un post o come una pagina */
-            'hierarchical' => false, /* Definisci se potranno essere definiti elementi padri di altri */
-            /* la riga successiva definisce quali elementi verranno visualizzati nella schermata di creazione del post */
-            'supports' => array( 'title', 'editor', 'thumbnail')
-        ) /* fine delle opzioni */
-    ); /* fine della registrazione */
-} 
 
 // Inizializzazione della funzione
-add_action( 'init', 'promos_post');
+add_action( 'init', 'create_promospost_type');
+
+function create_promospost_type() {
+	
+	$labels = array(
+            	'name' 					=> 'Promo', 
+            	'singular_name'			=> 'Promo', 
+            	'all_items' 			=> 'Tutti i Promo', 
+            	'add_new' 				=> 'Aggiungi nuovo Promo', 
+            	'add_new_item' 			=> 'Aggiungi nuovo Promo', 
+            	'edit_item' 			=> 'Modifica Promo', 
+            	'new_item' 				=> 'Nuovo Promo', 
+            	'view_item' 			=> 'Visualizza Promo', 
+            	'search_items' 			=> 'Cerca Promo', 
+            	'not_found' 			=> 'Nessun Promo trovato', 
+            	'not_found_in_trash' 	=> 'Nessun Promo trovato nel cestino', 
+            	'parent_item_colon' 	=> ''
+     );
+	
+	$args = array(
+			'labels'				=> $labels,
+			'description' 			=> 'Raccolta di Promo del portale',				
+			'public'				=> true,
+			'publicly_queryable' 	=> true, 										
+			'exclude_from_search'	=> false,
+			'show_ui'				=> true,
+			'capability_type'		=> 'post',
+			'hierarchical'			=> false,
+			'has_archive' 			=> 'true',
+			'rewrite'				=> array('slug'=> 'promos', 'with_front' => true ),
+			'query_var' 			=> true,
+			'menu_position'			=> null,
+			'menu_icon'				=> '',  
+			'supports'				=> array('title','thumbnail', 'page-attributes','editor'),
+			'taxonomies' 			=> array('promos_cat','promos_tag')
+	); 
+		register_post_type( 'promos' , $args );
+
+} 
 
 
 
+register_taxonomy( 'promos_cat', 'promos', array(
+		'hierarchical'		=> true,
+		'labels' => array(
+			'name' 				=> __( 'Genere', 'taxonomy general name' ),
+			'singular_name' 	=> __( 'Genere', 'taxonomy singular name' ),
+			'search_items'		=> __( 'Cerca Genere'),
+			'parent_item'		=> __( 'Genitore ' ),
+			'parent_item_colon'	=> __( 'Genitore:' ),
+			'edit_item'			=> __( 'Modifica Genere '),
+			'update_item'		=> __( 'Aggiorna Genere'),
+			'add_new_item'		=> __( 'Aggiungi Genere'),
+			'new_item_name'		=> __( 'Nuovo Genere '),
+			'albums_name'		=> __( 'Genere '),
+		),
+		'show_ui'			=> true,
+		'query_var'			=> true,
+		'show_ui'			=> true,
+		'show_admin_column' => true,
+		'query_var'			=> true,
+		'rewrite'			=> array( 'slug' => 'genere' ),
+		'sort' 				=> true,
+		'args' 				=> array( 'orderby' => 'menu_order' ),
+		'has_archive' => true,
 
+	));
+	
+	
+	register_taxonomy( 'promos_tag', 'promos', array(
+		'hierarchical'		=> false,
+		'labels' => array(
+			'name' 				=> __( 'Tag', 'taxonomy general name' ),
+			'singular_name' 	=> __( 'Tag', 'taxonomy singular name' ),
+			'search_items'		=> __( 'Cerca Tag'),
+			'parent_item'		=> __( 'Genitore ' ),
+			'parent_item_colon'	=> __( 'Genitore:' ),
+			'edit_item'			=> __( 'Modifica Tag '),
+			'update_item'		=> __( 'Aggiorna Tag'),
+			'add_new_item'		=> __( 'Aggiungi Tag'),
+			'new_item_name'		=> __( 'Nuovo Tag '),
+			'albums_name'		=> __( 'Tag '),
+		),
+		'show_ui'			=> true,
+		'query_var'			=> true,
+		'show_ui'			=> true,
+		'query_var'			=> true,
+		'show_admin_column' => true,
+		'rewrite'			=> array( 'slug' => 'genere' ),
+		'sort' 				=> true,
+		'args' 				=> array( 'orderby' => 'menu_order' ),
+		'has_archive' => true,
+
+	));
+	
+	
+	global $columns;
+	function promos_columns( $columns ) {
+		$cols_start = array_slice( $columns, 0, 1, true );
+		$cols_end   = array_slice( $columns, 1, null, true );
+		$custom_cols = array_merge(
+			$cols_start,
+			array( 
+				'id'		=> __('ID\'s'),
+				'thumbnail' => __('Thumbnails')
+			),
+			$cols_end
+		);
+		return $custom_cols;
+	}
+	function manage_promos_columns( $name ) {
+		global $wpdb, $wp_query,$post;
+		switch ( $name ) {
+			case 'thumbnail':
+					echo the_post_thumbnail('thumbnail');
+				break;
+			case 'promos_cat':
+				$terms = get_the_terms($post->ID, 'promos_cat');
+				//If the terms array contains items... (dupe of core)
+				if ( !empty($terms) ) {
+					//Loop through terms
+					foreach ( $terms as $term ){
+						//Add tax name & link to an array
+						$post_terms[] = esc_html(sanitize_term_field('name', $term->name, $term->term_id, '', 'edit'));
+					}
+					//Spit out the array as CSV
+					echo implode( ', ', $post_terms );
+				} else {
+					//Text to show if no terms attached for post & tax
+					echo '<em>No terms</em>';
+				}
+				break;
+			
+			case 'id':
+					echo get_the_ID();
+				break;
+		}
+	} 
+	add_action('manage_promos_posts_custom_column', 'manage_promos_columns', 10, 2);
+	add_filter('manage_edit-promos_columns', 'promos_columns');
 
 
  

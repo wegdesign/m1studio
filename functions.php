@@ -30,5 +30,8 @@ require_once ($include_path . 'theme-menu.php');
 //Theme Shortcode
 require_once ($include_path . 'theme-shortcode.php');
 
+//Theme Plugins
+require_once ($include_path . 'theme-plugins.php');
+
 
 ?>

@@ -14,9 +14,6 @@ function theme_styles() {
 		
 		wp_register_style('shortcodes-css', get_template_directory_uri() . '/css/shortcodes.css', '', '', 'all');
 		wp_enqueue_style('shortcodes-css');
-		
-		wp_register_style('animate-css', get_template_directory_uri() . '/css/animate.css', '', '', 'all');
-		wp_enqueue_style('animate-css');
 
 	}
 }

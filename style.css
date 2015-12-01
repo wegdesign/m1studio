@@ -755,7 +755,9 @@ h2#site-description {
 .header { position:relative; z-index: 20;}
 #header{
 	padding: 10px 0;
-	background-color: #333;
+	background: transparent;
+	background-color: rgba( 0, 0, 0, 0.85 );
+	
 }
 
 
@@ -769,8 +771,9 @@ h2#site-description {
 	font-size: 11px;
 	line-height: 35px;
 	overflow: hidden;
-	background: #555555;
-	color: #FFFFFF;
+	background: transparent;
+    background-color: rgba( 0, 0, 0, 0.75 );
+	color: #999999;
 	height: 35px;
 }
 
@@ -877,7 +880,7 @@ h2#site-description {
 	transition: background .2s;
 }
 
-.sf-menu ul { background: #333;}
+.sf-menu ul { background-color: rgba( 0, 0, 0, 0.85 );}
 .sf-menu ul li {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
