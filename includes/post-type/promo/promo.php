@@ -29,14 +29,15 @@ function create_promospost_type() {
 			'show_ui'				=> true,
 			'capability_type'		=> 'post',
 			'hierarchical'			=> false,
-			'has_archive' 			=> 'true',
-			'rewrite'				=> array('slug'=> 'promos', 'with_front' => true ),
+			'has_archive' 			=> true,
+			'rewrite'				=> array('slug'=> 'promos'),
 			'query_var' 			=> true,
 			'menu_position'			=> null,
 			'menu_icon'				=> '',  
 			'supports'				=> array('title','thumbnail', 'page-attributes','editor'),
 			'taxonomies' 			=> array('promos_cat','promos_tag')
 	); 
+	flush_rewrite_rules( false );
 		register_post_type( 'promos' , $args );
 
 } 
@@ -141,6 +142,59 @@ register_taxonomy( 'promos_cat', 'promos', array(
 	} 
 	add_action('manage_promos_posts_custom_column', 'manage_promos_columns', 10, 2);
 	add_filter('manage_edit-promos_columns', 'promos_columns');
+
+
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_promo',
+		'title' => 'Promo',
+		'fields' => array (
+			array (
+				'key' => 'field_565dd5694a33e',
+				'label' => 'File Audio',
+				'name' => 'file_audio',
+				'type' => 'file',
+				'instructions' => 'Inserisci il file Audio',
+				'required' => 1,
+				'save_format' => 'url',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_565dd58b4a33f',
+				'label' => 'Prezzo',
+				'name' => 'prezzo',
+				'type' => 'number',
+				'default_value' => 0,
+				'placeholder' => 0,
+				'prepend' => '€',
+				'append' => ',00',
+				'min' => 0,
+				'max' => '',
+				'step' => 1,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'promos',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 
 
  

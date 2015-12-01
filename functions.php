@@ -1,37 +1,42 @@
 <?php
-
-$include_path = get_template_directory() . '/includes/';
+define( 'THEME_URI', get_template_directory_uri());
+define( 'THEME_DIR', get_template_directory() );
+define( 'THEME_JS', THEME_URI . '/js' );
+define( 'THEME_CSS', THEME_URI . '/css' );
+define( 'THEME_PLUGINS', THEME_DIR . '/plugins/' );
+define( 'THEME_INCLUDE', THEME_DIR . '/includes/' );
+define( 'THEME_POST_TYPE', THEME_INCLUDE . '/post-type/' );
+define( 'THEME_TEMPLATE', THEME_INCLUDE . '/template/' );
 
 //Header function
-require_once $include_path . 'header-function.php';
+require_once (THEME_INCLUDE . 'header-function.php');
 
 //Theme Admin
-require_once ($include_path . 'theme-admin.php');
+require_once (THEME_INCLUDE . 'theme-admin.php');
 
 //Theme Init
-require_once ($include_path . 'theme-init.php');
+require_once (THEME_INCLUDE . 'theme-init.php');
 
 //Theme Function
-require_once ($include_path . 'theme-function.php');
+require_once (THEME_INCLUDE . 'theme-function.php');
 
 //Theme Styles
-require_once ($include_path . 'theme-styles.php');
+require_once (THEME_INCLUDE . 'theme-styles.php');
 
 //Theme Sidebar
-require_once ($include_path . 'theme-sidebar.php');
+require_once (THEME_INCLUDE . 'theme-sidebar.php');
 
 //Theme Custom
-require_once ($include_path . 'theme-custom.php');
+require_once (THEME_INCLUDE . 'theme-custom.php');
 
 //Theme Manu
-require_once ($include_path . 'theme-menu.php');
-
+require_once (THEME_INCLUDE . 'theme-menu.php');
 
 //Theme Shortcode
-require_once ($include_path . 'theme-shortcode.php');
+require_once (THEME_INCLUDE . 'theme-shortcode.php');
 
 //Theme Plugins
-require_once ($include_path . 'theme-plugins.php');
+require_once (THEME_INCLUDE . 'theme-plugins.php');
 
 
 ?>

@@ -29,14 +29,15 @@ function create_service_post_type() {
 			'show_ui'				=> true,
 			'capability_type'		=> 'post',
 			'hierarchical'			=> false,
-			'has_archive' 			=> 'true',
-			'rewrite'				=> array('slug'=> 'services', 'with_front' => true ),
+			'has_archive' 			=> true,
+			'rewrite'				=> array('slug'=> 'services' ),
 			'query_var' 			=> true,
 			'menu_position'			=> null,
 			'menu_icon'				=> '',  
 			'supports'				=> array('title', 'editor'),
 			
 	); 
+	flush_rewrite_rules( false );
 		register_post_type( 'services' , $args );
 
 } 
@@ -44,7 +45,7 @@ function create_service_post_type() {
 
 //change menu icon
 add_action( 'admin_head', 'add_menu_icons_service' );
-function add_menu_icons_service(){
+ function add_menu_icons_service(){
 ?>
 
 <style>

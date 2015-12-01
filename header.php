@@ -72,32 +72,7 @@
 					}
 					?>
 					
-					<?php if(!is_front_page() && is_single() ){?>
-						<div id="subheader">
-							<div class="inner">
-								<div class="subdesc">
-									<h1 class="page-title"> 
-										<?php $postid = get_the_ID();
-										$page = get_post($postid);
-										$title = $page -> post_title;
-										$icon = get_post_meta( $postid, 'fa_field_icon', true );
-										if($icon && $page->post_type == "services"){
-											echo '<i class="fa '. $icon .'  services-icon"></i>';
-										}
-										echo $title;
-										?> 
-									</h1>
-								</div>
-								<div class="breadcrumbs">
-			    					<?php
-									if (function_exists('bcn_display')) {
-										bcn_display();
-									}
-								?>
-								</div>
-							</div>
-						</div>
-					<?php } ?>
+					<?php sub_header(); ?>
 					
 					<div id="main" class="fullwidth">
 				

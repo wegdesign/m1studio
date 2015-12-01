@@ -63,4 +63,44 @@ if(!function_exists("theme_slider_home")){
 }
 
 
+if(!function_exists("sub_header")){
+	function sub_header(){
+		
+		if(!is_front_page())
+			if(is_single() || is_post_type_archive()){?>
+						<div id="subheader">
+							<div class="inner">
+								<div class="subdesc">
+									<h1 class="page-title"> 
+										<?php 
+										$title = "";
+										if(is_post_type_archive()){
+											$title = post_type_archive_title();
+										}else{
+											$postid = get_the_ID();
+											$page = get_post($postid);
+											$title = $page -> post_title;
+											$icon = get_post_meta( $postid, 'fa_field_icon', true );
+											if($icon && $page->post_type == "services"){
+												echo '<i class="fa '. $icon .'  services-icon"></i>';
+											}
+										}
+										
+										echo $title;
+										?> 
+									</h1>
+								</div>
+								<div class="breadcrumbs">
+			    					<?php
+									if (function_exists('bcn_display')) {
+										bcn_display();
+									}
+								?>
+								</div>
+							</div>
+						</div>
+					<?php }
+	}
+}
+
 ?>

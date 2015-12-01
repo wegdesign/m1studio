@@ -1,13 +1,9 @@
 <?php
 
-
-$post_type_path = get_template_directory() . '/includes/post-type/'; 
-
 //Service
-require_once ($post_type_path . 'services.php');
+require_once (THEME_POST_TYPE . 'service/services.php');
 
-//Service
-require_once ($post_type_path . 'promo.php');
-
+//Promo
+require_once (THEME_POST_TYPE . 'promo/promo.php');
 
 ?>

@@ -32,7 +32,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php } ?>
 			<div class="entry-content">
 				
-				<?php get_template_part('includes/post-type/' . $format); ?>
+				<?php get_template_part( THEME_TEMPLATE . $format); ?>
 					
 				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">
