@@ -180,7 +180,11 @@ function optionsframework_options() {
 						'type' => 'textarea');
 	
 	
-	$options[] = array('name' => __('Services', 'm1studio'), 'type' => 'heading');
+	//Music Settings
+	$options[] = array( 'name' => 'Music Settings', 'type' => 'heading' );
+	
+	
+	$options[] = array('name' => __('Services Settings', 'm1studio'), 'type' => 'heading');
 	
 	// Pull all the pages into an array
 	$options_services = array();
