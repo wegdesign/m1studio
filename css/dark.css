@@ -1,0 +1,128 @@
+body,
+#footer {
+	color:#999999;
+}
+
+
+.album-desc,
+.artist-desc,
+.gallery-desc,
+.video-desc,
+.event-desc
+{
+	background-color:#444444;
+}
+
+.album-desc a,
+.artist-desc a,
+.gallery-desc a,
+.video-desc a,
+.event-desc a {
+	color:#ffffff;
+}
+
+.album-desc a:hover,
+.artist-desc a:hover,
+.gallery-desc a:hover,
+.video-desc a:hover,
+.event-desc a:hover {
+	color:#444444;
+}
+
+.album-desc span,
+.artist-desc span,
+.gallery-desc span,
+.video-desc span,
+.event-desc span {
+	color:rgba(255,255,255,0.5)
+}
+
+.divider,
+#subheader,
+.pagination a, .pagination a:link,
+#footer .footer-sidebar,
+.events-list,
+.event_details_wrap,
+.event-single .event_info,
+.event-meta,
+.event_wwrap,
+.style2 .post_list {
+	border-color:#444444;
+}
+
+#back-top span,
+.event-meta .day,
+.tagcloud a:hover,
+.pagination a:hover,
+.pagination span.current,
+.play-btn,
+.comment-edit-link, .post-edit-link {
+	background-color:#ffd908;
+	color: #444444;
+}
+
+.album-list:hover .album-desc,
+.artist-list:hover .artist-desc,
+.gallery-list:hover .gallery-desc,
+.video-list:hover .video-desc,
+.event-list:hover .event-desc,
+.hover_type a.hoveraudio:hover,
+.hover_type a.hovervideo:hover,
+.hover_type a.hovergallery:hover,
+.hover_type a.hoverimage:hover,
+.hover_type a.hoverartist:hover,
+.album-playlist li.selected,
+.flex-title h5 span { 
+	background-color:#ffd908;
+	
+}
+
+
+.hover_type a.hoveraudio{
+	color:#ffd908;
+}
+.hover_type a.hoveraudio:hover{
+	color:#444444;
+}
+
+.album-playlist li { background-color:#444444; color:#999999; }
+.album-playlist li a { color:#bbbbbb; }
+.album-playlist li:hover { background-color:#222222;}
+ span.lyrics  a{ background-color:#333333; color:#999999;}
+.album-list:hover .album-desc *,
+.video-list:hover .video-desc *,
+.gallery-list:hover .gallery-desc *,
+.event-list:hover .event-desc *,
+.artist-list:hover .artist-desc * { color:#111111; }
+
+.album-list:hover .album-desc span,
+.video-list:hover .video-desc span,
+.gallery-list:hover .gallery-desc span,
+.event-list:hover .event-desc span,
+.artist-list:hover .artist-desc span { color:rgba(0,0,0,0.4) }
+
+.event_details_wrap,
+.djmix-list,
+.events-list { background-color:#222222; }
+
+.promo-title {
+	float: left;
+    padding: 10px;
+}
+
+.promo-prezzo {
+	float: right;
+    height: 50px;
+    background-color: #ffd908;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.promo-prezzo .label-text {
+	
+	color: #444444 !important;
+}
+
+.album-list:hover .album-desc .promo-prezzo { background-color: #444444;}
+.album-list:hover .album-desc .promo-prezzo .label-text { color: #ffd908 !important;}
+

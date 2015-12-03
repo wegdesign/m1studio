@@ -38,6 +38,9 @@ require_once (THEME_INCLUDE . 'theme-shortcode.php');
 //Theme Plugins
 require_once (THEME_INCLUDE . 'theme-plugins.php');
 
+//Theme Scripts
+require_once (THEME_INCLUDE . 'theme-scripts.php');
+
 
 
 ?>

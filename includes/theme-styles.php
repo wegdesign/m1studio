@@ -14,6 +14,9 @@ function theme_styles() {
 		
 		wp_register_style('shortcodes-css',  THEME_CSS . '/shortcodes.css', '', '', 'all');
 		wp_enqueue_style('shortcodes-css');
+		
+		wp_register_style('dark-css',  THEME_CSS . '/dark.css', '', '', 'all');
+		wp_enqueue_style('dark-css');
 
 	}
 }

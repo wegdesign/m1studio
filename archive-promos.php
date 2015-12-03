@@ -59,18 +59,22 @@ get_header(); ?>
 								<?php 
 								echo '<figure>'.theme_resize( $post->ID, '', $width, $height, '', $img_alt_title ).'</figure>';
 								echo '<div class="hover_type">';
-								echo '<a class="hoveraudio"  href="' .get_permalink(). '" title="' . get_the_title() . '"></a>';
+								echo '<a class="hoveraudio"  href="' .get_permalink(). '" title="' . get_the_title() . '"><i class="fa fa-headphones fa-2x services-icon"></i></a>';
 								echo '</div>';
+								echo '<span class="imgoverlay"></span>'
 								?>
 							</div>
 							<?php } ?>
 							
 							<div class="album-desc">
-							
-								<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( "Permanent Link to %s", 'musicplay' ), esc_attr( get_the_title() ) ); ?>"><?php the_title(); ?></a></h2>
-								<span class="label-text"><?php echo $prezzo?></span>
+								<div class="promo-title">
+									<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( "Permanent Link to %s", 'm1studio' ), esc_attr( get_the_title() ) ); ?>"><?php the_title(); ?></a></h2>
+								</div>
+								<div class="promo-prezzo">
+									<span class="label-text">€ <?php echo $prezzo?>,00</span>
+								</div>
 							</div><!-- .album-desc-->
-
+							
 						</div><!-- .custompost_entry -->
 					</div><!-- .album_list -->
 				
