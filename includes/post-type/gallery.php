@@ -1,65 +1,76 @@
 <?php
 
+// Inizializzazione della funzione
+add_action( 'init', 'create_gallerypost_type');
+
 function create_gallerypost_type() {
 	
-		$labels = array(
-			'name'				=> __('Gallery'),
-			'singular_name'		=> __('All Gallery'),
-			'add_new'			=> __('Add New Gallery'),
-			'add_new_item'		=> __('Add New Gallery'),
-			'edit_item'			=> __('Edit Gallery'),
-			'new_item'			=> __('New Item'),
-			'view_item'			=> __('View Gallery Item'),
-			'search_items'		=> __('Search Gallery Item'),
-			'not_found'			=> __('Nothing found'),
-			'not_found_in_trash'=> __('Nothing found in Trash'),
-			'parent_item_colon'	=> '',
-			'all_items' 		=> __( 'All Galleries'),
-		);
-
-		$args = array(
+	$labels = array(
+            	'name' 					=> 'Galleria', 
+            	'singular_name'			=> 'Galleria', 
+            	'all_items' 			=> 'Tutte le Gallerie', 
+            	'add_new' 				=> 'Aggiungi nuova Galleria', 
+            	'add_new_item' 			=> 'Aggiungi nuova Galleria', 
+            	'edit_item' 			=> 'Modifica Galleria', 
+            	'new_item' 				=> 'Nuova Galleria', 
+            	'view_item' 			=> 'Visualizza Galleria', 
+            	'search_items' 			=> 'Cerca Galleria', 
+            	'not_found' 			=> 'Nessuna Galleria trovata', 
+            	'not_found_in_trash' 	=> 'Nessuna Galleria trovata nel cestino', 
+            	'parent_item_colon' 	=> ''
+     );
+	
+	$args = array(
 			'labels'				=> $labels,
+			'description' 			=> 'Raccolta di Galleria del portale',				
 			'public'				=> true,
+			'publicly_queryable' 	=> true, 										
 			'exclude_from_search'	=> false,
 			'show_ui'				=> true,
 			'capability_type'		=> 'post',
 			'hierarchical'			=> false,
-			'rewrite'				=> array( 'with_front' => true ),
-			'query_var'				=> false,
+			'has_archive' 			=> true,
+			'rewrite'				=> array('slug'=> 'gallery'),
+			'query_var' 			=> true,
 			'menu_position'			=> null,
-			'menu_icon'				=> '',
-			'has_archive' 			=> true,   
+			'menu_icon'				=> '',  
 			'supports'				=> array('title','thumbnail', 'page-attributes','editor'),
-			'taxonomies' 			=> array('gallery_type')
-		); 
+			'taxonomies' 			=> array('gallery_cat')
+	); 
+	flush_rewrite_rules( false );
 		register_post_type( 'gallery' , $args );
-	}
-	add_action('init', 'create_gallerypost_type');
+
+} 
 
 
-register_taxonomy( "gallery_type", 'gallery', array(
+
+register_taxonomy( 'gallery_cat', 'gallery', array(
 		'hierarchical'		=> true,
 		'labels' => array(
-			'name' 				=> __( 'Gallery Categories', 'taxonomy general name' ),
-			'singular_name' 	=> __( 'Gallery Categories', 'taxonomy singular name' ),
-			'search_items' 		=> __( 'Search Gallery'),
-			'parent_item' 		=> __( 'Parent Gallery'),
-			'parent_item_colon' => __( 'Parent Gallery:' ),
-			'edit_item' 		=> __( 'Edit Gallery'),
-			'update_item' 		=> __( 'Update Gallery Category'),
-			'add_new_item' 		=> __( 'Add Gallery Category'),
-			'new_item_name' 	=> __( 'New Gallery '),
-			'gallery_name' 	    => __( 'Gallery Categories' ),
+			'name' 				=> __( 'Categorie', 'taxonomy general name' ),
+			'singular_name' 	=> __( 'Categorie', 'taxonomy singular name' ),
+			'search_items'		=> __( 'Cerca Categorie'),
+			'parent_item'		=> __( 'Genitore ' ),
+			'parent_item_colon'	=> __( 'Genitore:' ),
+			'edit_item'			=> __( 'Modifica Categoria '),
+			'update_item'		=> __( 'Aggiorna Categoria'),
+			'add_new_item'		=> __( 'Aggiungi Categoria'),
+			'new_item_name'		=> __( 'Nuova Categoria '),
+			'albums_name'		=> __( 'Categorie '),
 		),
 		'show_ui'			=> true,
 		'query_var'			=> true,
-		'rewrite'			=> true,
+		'show_ui'			=> true,
 		'show_admin_column' => true,
+		'query_var'			=> true,
+		'rewrite'			=> array( 'slug' => 'categorie' ),
 		'sort' 				=> true,
 		'args' 				=> array( 'orderby' => 'menu_order' ),
 		'has_archive' => true,
 
 	));
+	
+	
 
 	global $columns;
 	function gallery_columns( $columns ) {
@@ -89,51 +100,6 @@ function manage_gallery_columns( $name ) {
 	} 
 	add_action('manage_gallery_posts_custom_column', 'manage_gallery_columns', 10, 2);
 	add_filter('manage_edit-gallery_columns', 'gallery_columns');
-
-
-
-if( function_exists('register_field_group') ):
-
-register_field_group(array (
-	'key' => 'group_566197e36ddfe',
-	'title' => 'Gallery',
-	'fields' => array (
-		array (
-			'key' => 'field_5661a4969a9ca',
-			'label' => 'gallery',
-			'name' => 'gallery',
-			'prefix' => '',
-			'type' => 'gallery',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'min' => '',
-			'max' => '',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'gallery',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'seamless',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-endif;
-
-
-
 
 
 ?>
