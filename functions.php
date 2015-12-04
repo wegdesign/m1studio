@@ -47,7 +47,7 @@ require_once (THEME_INCLUDE . 'theme-plugins.php');
 require_once (THEME_INCLUDE . 'theme-scripts.php');
 
 //Theme Meta Box
-//require_once (THEME_INCLUDE . 'theme-metabox.php');
+require_once (THEME_INCLUDE . 'theme-metabox.php');
 
 
 
