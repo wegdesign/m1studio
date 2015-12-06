@@ -559,7 +559,7 @@ class acf
 		// admin only
 		if( is_admin() )
 		{
-			add_action('admin_menu', array($this,'admin_menu'));
+			//add_action('admin_menu', array($this,'admin_menu'));
 			add_action('admin_head', array($this,'admin_head'));
 			add_filter('post_updated_messages', array($this, 'post_updated_messages'));
 		}

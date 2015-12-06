@@ -1,34 +1,5 @@
 <?php
 
-/*
-  Plugin Name: Multi Image Uploader
-  Plugin URI: http://tahiryasin.wordpress.com/plugins/multi-image-upload/
-  Description: This plugin adds a meta box to upload multiple images for posts and pages.
-  Author: Tahir Yasin
-  Version: 1.1
-  Author URI: http://about.me/tahiryasin
- */
-
-/*  Copyright 2013  Tahir Yasin  (email : tahiryasin@outlook.com)
-
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- */
-
-/**
- * Calls the class on the post add/edit screens.
- */
 function call_Multi_Image_Uploader()
 {
     new Multi_Image_Uploader();
@@ -177,7 +148,8 @@ class Multi_Image_Uploader
         // Use get_post_meta to retrieve an existing value from the database.
         $value = get_post_meta($post->ID, 'miu_images', true);
 
-        $metabox_content = '<div id="miu_images"></div><input type="button" onClick="addRow()" value="Add Image" class="button" />';
+        $metabox_content = '<div id="miu_images" style="overflow: hidden;"></div>
+        <input type="button" onClick="addRow()" value="Add Image" class="button" />';
         echo $metabox_content;
 
         $images = unserialize($value);
