@@ -24,6 +24,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
  ?>
 
 	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+		<div class="post_loop">
 		<div class="post_content">
 			<?php if( $format != 'link' && $format != 'quote' && $format != 'aside') { ?>
 				<h2 class="entry-title">
@@ -32,7 +33,17 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php } ?>
 			<div class="entry-content">
 				
-				<?php get_template_part( THEME_TEMPLATE . $format); ?>
+				<?php 
+					if( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
+						global $post_id;
+						$img_alt_title 	= get_the_title();
+				?>
+						<div class="postimg">
+							<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
+								<?php echo theme_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
+							</a>
+						</div>
+				<?php } ?>
 					
 				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">
@@ -53,6 +64,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php  } ?>
 			</div><!-- .post-info -->
 		<?php } ?>		
+		</div>
 		</div>
 	</div>
 

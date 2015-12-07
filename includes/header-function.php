@@ -67,7 +67,7 @@ if(!function_exists("sub_header")){
 	function sub_header(){
 		
 		if(!is_front_page())
-			if(is_single() || is_post_type_archive()){?>
+			if(is_single() || is_post_type_archive() || is_page()){?>
 						<div id="subheader">
 							<div class="inner">
 								<div class="subdesc">

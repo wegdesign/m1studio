@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Albums 3 Column
-*/
 
 /** 
  * The Header for our theme.

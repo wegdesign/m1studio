@@ -11,11 +11,9 @@ get_header();
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php the_content(); ?>
 
-				<?php the_content(); ?>
-
-				<?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'm1studio'), 'after' => '</div>')); ?>
-
+					<?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'm1studio'), 'after' => '</div>')); ?>
 </div><!-- #post-<?php the_ID(); ?> -->
 <div class="clear"></div>
 

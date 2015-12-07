@@ -17,7 +17,7 @@ get_header();
 				<h2>Ooops... Error 404</h2>
 				<h5>We're sorry, but the page you are looking for doesn't exist.</h5>
 				<p class="center">
-					<a class="btn large belizehole" href="<?php echo home_url(); ?>"><span>Go To Homepage</span></a>
+					<a class="btn large m1studio" href="<?php echo home_url(); ?>"><span>Go To Homepage</span></a>
 				</p>
 
 			</div><!-- .error_404 -->

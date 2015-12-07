@@ -47,7 +47,7 @@ body,
 .event-meta,
 .event_wwrap,
 .style2 .post_list {
-	border-color: #ffd908;
+	border-color: #D5D45B;
 }
 
 #back-top span,
@@ -57,7 +57,7 @@ body,
 .pagination span.current,
 .play-btn,
 .comment-edit-link, .post-edit-link {
-	background-color:#ffd908;
+	background-color:#D5D45B;
 	color: #444444;
 }
 
@@ -73,13 +73,13 @@ body,
 .hover_type a.hoverartist:hover,
 .album-playlist li.selected,
 .flex-title h5 span { 
-	background-color:#ffd908;
+	background-color:#D5D45B;
 	
 }
 
 
 .hover_type a.hoveraudio, .hover_type a.hoverimage{
-	color:#ffd908;
+	color:#D5D45B;
 }
 .hover_type a.hoveraudio:hover, .hover_type a.hoverimage:hover{
 	color:#444444;
@@ -113,7 +113,7 @@ body,
 .promo-prezzo {
 	float: right;
     height: 50px;
-    background-color: #ffd908;
+    background-color: #D5D45B;
     padding: 10px;
     font-size: 20px;
 }
@@ -124,5 +124,5 @@ body,
 }
 
 .album-list:hover .album-desc .promo-prezzo { background-color: #444444;}
-.album-list:hover .album-desc .promo-prezzo .label-text { color: #ffd908 !important;}
+.album-list:hover .album-desc .promo-prezzo .label-text { color: #D5D45B !important;}
 

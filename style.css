@@ -159,6 +159,11 @@ ul, ol {
 	padding: 3px 0;
 }
 
+
+.content-area {    
+	text-align: justify;
+}
+
 nav ul,
 nav ol {
 	list-style: none;
@@ -437,7 +442,7 @@ body, input, select, textarea  {
 }
 
 a {
-	color: #ffd908;
+	color: #D5D45B;
 	text-decoration: none;
 	-webkit-transition:	all .3s ease-out;
 	-moz-transition: 	all .3s ease-out;
@@ -869,7 +874,7 @@ h2#site-description {
 .sf-menu li.sfHover,
 .sf-menu a:focus, 
 .sf-menu a:hover, 
-.sf-menu a:active { color: yellow; outline:none; }
+.sf-menu a:active { color: #D5D45B; outline:none; }
 
 .sf-menu li {
 	background: transparent;
@@ -1185,7 +1190,7 @@ h2#site-description {
 	margin: 0 auto;
 	overflow: hidden;
 	z-index: 9;
-	background-color: #f0f0f0;
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -1193,8 +1198,8 @@ h2#site-description {
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
 #subheader{
-	background-color: rgba(255, 255, 255);
-	background-color: rgba(255, 255, 255, 1);
+	
+	background-color: rgb(0, 0, 0);
 	border-bottom:1px solid #dddddd;
 	display: table;
 	position: relative;
@@ -1202,6 +1207,7 @@ h2#site-description {
 	padding: 20px 0;
 	width: 100%;
 	z-index:18;
+	text-transform: uppercase;
 }
 
 #subheader .page-title {
@@ -1209,7 +1215,7 @@ h2#site-description {
 	margin-bottom: 0;
 	letter-spacing: -1px;
 	line-height: 100%;
-	color: #444444;
+	color: #D5D45B;
 }
 
 #subheader .subdesc { float: left; width: 60%;}
@@ -1257,7 +1263,8 @@ h2#site-description {
 	margin: 0px auto 100px auto;;
 	padding: 30px 0;
 	font-size: 12px;
-	background-color: #333;
+	background-color: rgb(0, 0, 0);
+    border-top: 1px solid #D5D45B;
 }
 #footer ul li{
 	font-size: 12px;
@@ -1284,7 +1291,7 @@ h2#site-description {
 }
 
 #footer a:hover {
-	color: yellow;
+	color: #D5D45B;
 	text-decoration: none;
 	outline: 0;
 }
@@ -1521,16 +1528,16 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 
 
 
-.post { 
+.post_loop { 
 	/* position: relative; */
 	/* padding-bottom: 40px; */
 	/* margin-bottom:20px; */
 	/* padding: 15px 0 15px 15px; */
 	/* display: inline-block; */
 	/* border-bottom: 1px solid #dddddd; */
-	/* background-color: rgba(11, 11, 11, 0.1); */
-	/*background-color: rgba(26, 26, 26, 0.67); */
-	background-color: rgba(0, 0, 0, 0.6);
+	 background-color: rgba(11, 11, 11, 0.1);
+	background-color: rgba(26, 26, 26, 0.67); 
+	/*background-color: rgba(0, 0, 0, 0.6);*/
     box-shadow: rgba(255, 255, 255, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 7px 0px inset;
     color: rgb(174, 176, 180);
     display: block;
@@ -1572,7 +1579,7 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 
 
 .post h2.entry-title {
-	color: #ffd908;
+	color: #D5D45B;
     height: 43px;
     margin-bottom: 0px;
     margin-left: 0px;
@@ -1587,7 +1594,7 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 
 .post h2.entry-title a {
 	
-	color: #ffd908; 
+	color: #D5D45B; 
 }
 
 .post h2.entry-title a:hover {
@@ -1653,12 +1660,12 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 
 .post-info  {
 	
-    border-bottom-color: #ffd908;
+    border-bottom-color: #D5D45B;
     border-bottom-style: solid;
     border-bottom-width: 4px;
-    border-left-color: #ffd908;
-    border-right-color: #ffd908;
-    border-top-color: #ffd908;
+    border-left-color: #D5D45B;
+    border-right-color: #D5D45B;
+    border-top-color: #D5D45B;
     margin-top: 10px;
  
 }
@@ -1686,7 +1693,7 @@ div .wp-caption { font-size: 11px; font-style: italic; margin: 5px 15px 10px 0px
 }
 .comments-title {margin-bottom: 30px;}
 .more-link {
-	background-color: #ffd908;
+	background-color: #D5D45B;
     color: #666666;
     float: right;
     font-size: 14px;
@@ -2201,13 +2208,19 @@ p.comment-form-comment {
 }
 
 
-.services-heading h3 {
+.services-heading h3{
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 36px;
     margin-bottom: 10px;
+	color: #D5D45B;
+    text-transform: uppercase;
+}
 
+.services-heading i {
+	
+	color: #D5D45B;
     text-transform: uppercase;
 }
 
