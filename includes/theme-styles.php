@@ -2,6 +2,10 @@
 
 function theme_styles() {
 
+	wp_register_style('prettyphoto', get_template_directory_uri().'/css/prettyPhoto.css', false, false, 'all');
+	wp_enqueue_style( 'prettyphoto');
+	
+
 	if (!is_admin()) {
 		wp_register_style('fontawesome', THEME_CSS . '/font-awesome.min.css', array(), '4.5.0', 'all');
 		wp_enqueue_style('fontawesome');

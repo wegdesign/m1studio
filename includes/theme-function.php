@@ -290,6 +290,8 @@ if(!function_exists("find_sliders")){
 			 return $all_sliders;
 	}
 }
+
+
 if(!function_exists("home_services")){
 	function home_services(){
 		
@@ -328,9 +330,17 @@ if(!function_exists("home_services")){
 		}
 		
 	}	
-	
-	
-	
 }
+
+
+function get_attachment_id_from_src ($image_src) {
+ 
+    global $wpdb;
+    $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
+    $id = $wpdb->get_var($query);
+    return $id;
+ 
+}
+
 
 ?>

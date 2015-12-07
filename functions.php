@@ -14,6 +14,9 @@ define( 'THEME_TEMPLATE', THEME_INCLUDE . '/template/' );
 //Header function
 require_once (THEME_INCLUDE . 'header-function.php');
 
+//Footer function
+require_once (THEME_INCLUDE . 'footer-function.php');
+
 //Theme Admin
 require_once (THEME_INCLUDE . 'theme-admin.php');
 

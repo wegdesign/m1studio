@@ -47,7 +47,7 @@ body,
 .event-meta,
 .event_wwrap,
 .style2 .post_list {
-	border-color:#444444;
+	border-color: #ffd908;
 }
 
 #back-top span,
@@ -78,10 +78,10 @@ body,
 }
 
 
-.hover_type a.hoveraudio{
+.hover_type a.hoveraudio, .hover_type a.hoverimage{
 	color:#ffd908;
 }
-.hover_type a.hoveraudio:hover{
+.hover_type a.hoveraudio:hover, .hover_type a.hoverimage:hover{
 	color:#444444;
 }
 
