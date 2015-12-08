@@ -588,7 +588,7 @@ h4 small { font-size: 12px; }
  * ----------------------------------------------------------------------------
  */
 #main {
-	background-color: rgba(0, 0, 0, 0.85);
+	background-color: rgba(0, 0, 0, 0.9);
 	padding: 40px 0 0 0;
 	position:relative;
 	z-index:9;
