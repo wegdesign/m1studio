@@ -20,7 +20,8 @@ get_header(); ?>
 					$music_image = aq_resize( $imagesrc[0], '60', '60', true );
 					$permalink = get_permalink( get_the_id());
 					$playlisttitle = get_the_title( get_the_id());
-					
+					$download_audio = get_field( "download_audio" , $post->ID);
+					$buy_audio = get_field( "buy_audio" , $post->ID);
 					
 					?>
 					<div class="custompost_entry">				
@@ -39,29 +40,57 @@ get_header(); ?>
 							<?php } ?>
 							
 							<div class="album-details">
-							
 								
-								<div class="album-meta"><span>Release Date </span> <?php the_modified_date(); ?></div>
+								
+								
 								<?php if($audio_tag != '' ) { ?>
 								<div class="album-meta">
 									<span>Tags </span><?php echo get_the_term_list( $post->ID, 'promos_tag', '','' );?>
 								</div>
 								<?php } ?>
 								
-								<?php if($audio_genre_music != '' ) { ?>
-									<div class="album-meta"><span>Genere </span>
-									<?php echo get_the_term_list( $post->ID, 'promos_cat', '','' );?>
-								</div>
-								<?php } ?>
+								
 							
+								<?php echo share_link(); ?>
 							</div>
 							
 							
 							</div>
 							<div class="col_three_fourth end">
+								<span class="album-meta"><?php the_modified_date(); ?> </span>
 								<h2 class="album-title "><?php the_title(); ?></h2>
+								<?php if($audio_genre_music != '' ) { ?>
+									<div class="album-meta"><span><?php echo get_the_term_list( $post->ID, 'promos_cat', '','' );?></span></div>
+								<?php } ?>
+								<div class="album-list">
+									<div style="background: #222;">
+								<?php 
+									$traccia_audio = get_field( "traccia_audio" , $post->ID);
+									if($traccia_audio != ""){
+										echo do_shortcode('[audio mp3="' . $traccia_audio . '"][/audio]');
+									}
+								?>
+									</div>
+									<?php
+									
+									if($download_audio == 1 || $buy_audio == 1){
+									?> 
+									<div class="mp3options">
+										
+										<?php if($buy_audio == 1){?>
+											<span class="buy"><a href="mailto:localhost@prova.it"><i class="fa fa-shopping-cart fa-lg"></i></a></span>
+										<?php } ?>
+										<?php if($download_audio == 1){?>
+											<span class="download"  ><a href="<?php echo $traccia_audio; ?>"><i class="fa fa-download fa-lg"></i></a></span>
+										<?php } ?>
+									</div>
+									<?php } ?>
+								</div>
+								
+								
 								
 							</div>
+							<?php the_content(); ?>	
 						</div>
 					</div>					
 				</div>

@@ -65,9 +65,11 @@ if(!function_exists("theme_slider_home")){
 
 if(!function_exists("sub_header")){
 	function sub_header(){
-		
+		$postid = get_the_ID();
+		$page = get_post($postid);
+		$type = $page->post_type;
 		if(!is_front_page())
-			if(is_single() || is_post_type_archive() || is_page()){?>
+			if((is_single() &&  $type != "promos") || is_post_type_archive() || is_page()){?>
 						<div id="subheader">
 							<div class="inner">
 								<div class="subdesc">
@@ -77,8 +79,7 @@ if(!function_exists("sub_header")){
 										if(is_post_type_archive()){
 											$title = post_type_archive_title();
 										}else{
-											$postid = get_the_ID();
-											$page = get_post($postid);
+											
 											$title = $page -> post_title;
 											$icon = get_post_meta( $postid, 'fa_field_icon', true );
 											if($icon && $page->post_type == "services"){

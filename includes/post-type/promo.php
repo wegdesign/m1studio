@@ -152,21 +152,43 @@ if(function_exists("register_field_group"))
 		'title' => 'Promo',
 		'fields' => array (
 			array (
-				'key' => 'field_565dd5694a33e',
-				'label' => 'File Audio',
-				'name' => 'file_audio',
-				'type' => 'file',
-				'instructions' => 'Inserisci il file Audio',
+				'key' => 'field_565d835b15d3b',
+				'label' => 'Traccia Audio',
+				'name' => 'traccia_audio',
+				'type' => 'text',
+				'instructions' => 'Inserire la traccia della promo',
 				'required' => 1,
-				'save_format' => 'url',
-				'library' => 'all',
+				'default_value' => '',
+				'placeholder' => 'Inserisci l\'url del file mp3',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
 			),
 			array (
-				'key' => 'field_565dd58b4a33f',
+				'key' => 'field_56682a38a2c65',
+				'label' => 'Download Audio',
+				'name' => 'download_audio',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_56682a69a2c66',
+				'label' => 'Buy Audio',
+				'name' => 'buy_audio',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_565d83a015d3c',
 				'label' => 'Prezzo',
 				'name' => 'prezzo',
 				'type' => 'number',
-				'default_value' => 0,
+				'instructions' => 'Inserisci il Prezzo del Promo',
+				'required' => 1,
+				'default_value' => '',
 				'placeholder' => 0,
 				'prepend' => '€',
 				'append' => ',00',
@@ -188,13 +210,15 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 0,
 	));
 }
+
+
 
 
  

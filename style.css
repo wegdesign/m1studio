@@ -2473,7 +2473,7 @@ div.wpcf7-validation-errors {
 /* Album Single Page*/
 .albumpost_entry { overflow: hidden;}
 .album-details { margin-top:20px;}
-.album-meta { line-height:24px; margin-bottom:1px; font-size: 12px; }
+.album-meta { line-height:24px; margin-bottom:1px; font-size: 12px; height: 30px;}
 .album-meta > span {
 	display:inline-block;
 	float: left; 
@@ -3063,41 +3063,63 @@ span.lyrics a {
 
 span.download {
 	line-height:100%;
-	float:right;
+	float:left;
 	cursor: pointer;
-	right: 65px;
+	
+	color: #eee;
 	}
 
-span.download a {
-	font-size:12px;
-	background-color:#ffc000;
-	color:#000000;
-	padding:13px;
+span.download a:hover {
+
+
+	color:#D5D45B;
+
+}
+span.download a{
+
+
+	color:#eee;
+
 }
 span.buy {
 	line-height:100%;
-	float:right;
+	float:left;
 	cursor: pointer;
-	right: 150px;
+	
+
 	}
 
-span.buy a {
-	font-size:12px;
-	background-color:#ffc000;
-	color:#000000;
-	padding:13px;
-	z-index:99;
+span.buy a{
+	color: #eee;
+}
+span.buy a:hover {
+	
+
+	color:#D5D45B;
+	
 }
 
 .mp3options{
-	position:absolute;
-	float:right;
+	
+	float:left;
 	display: inline-block;
 	line-height: 100%;
 	z-index:99;
 	right:0;
+	height: 30px;
+	background-color: #222222;
 }
 
+
+.mp3options span{
+	padding: 8px;
+}
+
+
+div.mejs-container.svg.mejs-audio {
+   width: 90% !important;
+   float: left;
+ }
 
 
 
