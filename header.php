@@ -17,7 +17,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<title><?php 	bloginfo('name'); ?></title>
 		<meta name="description" content="<?php  get_bloginfo('description', 'display'); ?>">
-		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<?php if(theme_get_option('theme_favicon')) { ?>
+			<link rel="shortcut icon" href="<?php echo theme_get_option('theme_favicon'); ?>" type="image/x-icon" /> 
+		<?php } else { ?>
+			<link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/images/m1-studio-favicon.ico'?>" type="image/x-icon" />
+		<?php } ?>
 		<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->

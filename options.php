@@ -73,6 +73,10 @@ function optionsframework_options() {
 	//Music Settings
 	$options[] = array( 'name' => 'Music Settings', 'type' => 'heading' );
 	
+	$options[] = array('name' => __('Cover Default', 'm1studio'), 'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'), 'id' => $shortname . "_cover_image", 'type' => 'upload');
+	
+	$options[] = array('name' => __('Post Cover Default', 'm1studio'), 'desc' => __('If image logo is activated, upload the logo image.', 'm1studio'), 'id' => $shortname . "_post_cover_image", 'type' => 'upload');
+	
 	
 	$options[] = array('name' => __('Services Settings', 'm1studio'), 'type' => 'heading');
 	

@@ -342,5 +342,15 @@ function get_attachment_id_from_src ($image_src) {
  
 }
 
+if(!function_exists("theme_post_img")){
+	function theme_post_img(){
+		$post_cover = theme_get_option('theme_post_cover_image');
+		if($post_cover == ""){
+			$post_cover = get_template_directory_uri() . '/images/post_cover.jpg';
+		}
+		return $post_cover;
+	}
+}
+
 
 ?>

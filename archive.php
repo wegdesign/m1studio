@@ -35,16 +35,22 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="entry-content">
 				
 				<?php 
+					$img_alt_title 	= get_the_title();
+					$post_img = "";
+					global $post_id;
 					if( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) {
-						global $post_id;
-						$img_alt_title 	= get_the_title();
-				?>
+						$post_img = theme_resize($post_id,'','670','300','imgborder', $img_alt_title );
+					}else{
+						$cover = theme_post_img();
+						$post_img = theme_resize('',$cover,'670','300','imgborder', $img_alt_title );
+						
+					} ?>
 						<div class="postimg">
 							<a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
-								<?php echo theme_resize($post_id,'','670','300','imgborder', $img_alt_title );?>
+								<?php echo $post_img; ?>
 							</a>
 						</div>
-				<?php } ?>
+				
 					
 				<?php if ( $format != 'quote' ){ ?>
 					<div class="post-entry">

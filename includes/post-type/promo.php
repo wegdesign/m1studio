@@ -170,7 +170,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Download Audio',
 				'name' => 'download_audio',
 				'type' => 'true_false',
-				'message' => '',
+				'message' => 'La traccia può essere scaricata?',
 				'default_value' => 0,
 			),
 			array (
@@ -178,7 +178,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Buy Audio',
 				'name' => 'buy_audio',
 				'type' => 'true_false',
-				'message' => '',
+				'message' => 'La traccia può essere acquistata?',
 				'default_value' => 0,
 			),
 			array (
@@ -187,7 +187,6 @@ if(function_exists("register_field_group"))
 				'name' => 'prezzo',
 				'type' => 'number',
 				'instructions' => 'Inserisci il Prezzo del Promo',
-				'required' => 1,
 				'default_value' => '',
 				'placeholder' => 0,
 				'prepend' => '€',

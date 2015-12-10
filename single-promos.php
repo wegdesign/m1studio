@@ -33,7 +33,7 @@ get_header(); ?>
 							<?php
 								echo '<figure>'. theme_resize($post->ID,'','470','470','', $img_alt_title  ). '</figure>';
 								echo '<div class="hover_type">';
-								echo '<a data-rel="prettyPhoto" class="hoverimage" href="'.$imagesrc[0].'" title="'. get_the_title().'"></a>';
+								echo '<a data-rel="prettyPhoto" class="hoverimage" href="'.$imagesrc[0].'" title="'. get_the_title().'"><i class="fa fa-search fa-2x services-icon"></i></a>';
 								echo '</div>';
 							?>
 							</div>
