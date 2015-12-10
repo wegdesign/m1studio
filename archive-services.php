@@ -16,7 +16,17 @@ get_header();
 		<?php 
 		$count = 0;
 
-if (have_posts()) : while (have_posts()) : the_post(); ?>
+	if (have_posts()) : 
+	
+	$message_service = theme_get_option('message_services');
+	if($message_service != ""){
+	?>
+	
+	<h2><?php echo $message_service;?></h2>
+	
+	<?php
+		}
+		while (have_posts()) : the_post(); ?>
 	
 	
 	<?php if($count == 0 ) {

@@ -24,7 +24,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<div id="bodybg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/main_bg.jpg)"></div>
+		<?php theme_background(); ?>
 		<div id="boxed">
 			<div id="wrapper">
 				<div class="topbar">

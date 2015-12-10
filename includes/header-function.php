@@ -29,6 +29,19 @@ if(!function_exists("theme_logo")){
 	}
 }
 
+if(!function_exists("theme_background")){
+	
+	function theme_background(){
+		$theme_background = theme_get_option('theme_bg');
+		if($theme_background != ""){?>
+			<div id="bodybg" style="background-image: url(<?php echo $theme_background; ?>)"></div>
+		<?php } else {?>
+			
+			<div id="bodybg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/main_bg.jpg)"></div>
+		<?php }
+	}
+}
+
 
 //Primary Menu
 if(!function_exists("theme_primary_menu")){
