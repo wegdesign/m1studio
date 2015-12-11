@@ -170,7 +170,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Download Audio',
 				'name' => 'download_audio',
 				'type' => 'true_false',
-				'message' => 'La traccia può essere scaricata?',
+				'message' => '',
 				'default_value' => 0,
 			),
 			array (
@@ -178,7 +178,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Buy Audio',
 				'name' => 'buy_audio',
 				'type' => 'true_false',
-				'message' => 'La traccia può essere acquistata?',
+				'message' => '',
 				'default_value' => 0,
 			),
 			array (
@@ -216,6 +216,7 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
 
 
 

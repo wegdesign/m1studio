@@ -124,9 +124,11 @@ function promo_shortcode($atts, $content = null ) {
 					<div class="promo-title">
 						<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( "Permanent Link to %s", 'm1studio' ), esc_attr( get_the_title() ) ); ?>"><?php the_title(); ?></a></h2>
 					</div>
+					<?php if($prezzo != ""){ ?>
 					<div class="promo-prezzo">
 						<span class="label-text">€ <?php echo $prezzo?>,00</span>
 					</div>
+					<?php } ?>
 				</div><!-- .album-desc-->		
 			</div><!-- .custompost_entry -->
 		</div><!-- .album_list -->

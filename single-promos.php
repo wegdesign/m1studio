@@ -22,6 +22,9 @@ get_header(); ?>
 					$playlisttitle = get_the_title( get_the_id());
 					$download_audio = get_field( "download_audio" , $post->ID);
 					$buy_audio = get_field( "buy_audio" , $post->ID);
+					$prezzo = get_field( "prezzo" , $post->ID);
+					
+					
 					
 					?>
 					<div class="custompost_entry">				
@@ -39,16 +42,19 @@ get_header(); ?>
 							</div>
 							<?php } ?>
 							
-							<div class="album-details">
+							<div class="album-desc">
 								
-								
+								<?php if($prezzo != ""){ ?>
+								<div class="album-meta">
+									<span>Prezzo </span> € <?php echo $prezzo?>,00
+								</div>
+								<?php } ?>
 								
 								<?php if($audio_tag != '' ) { ?>
 								<div class="album-meta">
 									<span>Tags </span><?php echo get_the_term_list( $post->ID, 'promos_tag', '','' );?>
 								</div>
 								<?php } ?>
-								
 								
 							
 								<?php echo share_link(); ?>

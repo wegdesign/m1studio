@@ -4,14 +4,7 @@ body,
 }
 
 
-.album-desc,
-.artist-desc,
-.gallery-desc,
-.video-desc,
-.event-desc
-{
-	background-color:#444444;
-}
+
 
 .album-desc a,
 .artist-desc a,

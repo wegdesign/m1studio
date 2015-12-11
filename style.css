@@ -2243,14 +2243,12 @@ div.wpcf7-validation-errors {
 
 .album-list { position:relative;}
 .album-desc { 
-	background-color: #ffffff;
-	
 	overflow: hidden;
     border-top: none;
 	border-width: 0 1px 1px 1px;
 	-webkit-border-radius: 0px 0px 4px 4px;
 	-moz-border-radius: 0px 0px 4px 4px;
-	        border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
 }
 .album-desc > span { display: block; font-size: 11px; }
 .album-list .entry-title { margin-bottom:0px; font-size:14px;  }
