@@ -21,6 +21,8 @@ function theme_styles() {
 		
 		wp_register_style('dark-css',  THEME_CSS . '/dark.css', '', '', 'all');
 		wp_enqueue_style('dark-css');
+		
+		
 
 	}
 }

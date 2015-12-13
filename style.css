@@ -2249,6 +2249,18 @@ div.wpcf7-validation-errors {
 	-webkit-border-radius: 0px 0px 4px 4px;
 	-moz-border-radius: 0px 0px 4px 4px;
 	border-radius: 0px 0px 4px 4px;
+	background-color: #444444;
+}
+
+.album-single-desc { 
+	overflow: hidden;
+    border-top: none;
+	border-width: 0 1px 1px 1px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	margin-top: 10px;
+	
 }
 .album-desc > span { display: block; font-size: 11px; }
 .album-list .entry-title { margin-bottom:0px; font-size:14px;  }
@@ -2271,8 +2283,13 @@ div.wpcf7-validation-errors {
 	width: 48%; 
 	font-size:12px;
 }
-.album-meta > a {display: block; outline: none; color:#01749F;}
 
+.album-single-desc .album-meta{
+	padding-left: 10px;
+	
+}
+.album-meta > a {display: block; outline: none; color:#CCCCCC;}
+.album-meta a:hover {display: block; outline: none; color:#CCCCCC !important;}
 .album-title { font-size: 28px;  margin-bottom: 5px;}
 .album-title span { font-size: 18px;}
 .artist-text { font-size:14px; display: block; margin-bottom:20px; }

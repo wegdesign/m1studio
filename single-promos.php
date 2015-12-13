@@ -42,21 +42,16 @@ get_header(); ?>
 							</div>
 							<?php } ?>
 							
-							<div class="album-desc">
-								
+							<div class="album-single-desc">
 								<?php if($prezzo != ""){ ?>
-								<div class="album-meta">
-									<span>Prezzo </span> € <?php echo $prezzo?>,00
+								<div class="promo-single-prezzo">
+									<span class="label-text">€ <?php echo $prezzo?>,00</span>
 								</div>
 								<?php } ?>
-								
-								<?php if($audio_tag != '' ) { ?>
-								<div class="album-meta">
-									<span>Tags </span><?php echo get_the_term_list( $post->ID, 'promos_tag', '','' );?>
-								</div>
-								<?php } ?>
-								
+							</div>
 							
+							
+							<div class="album-single-desc">
 								<?php echo share_link(); ?>
 							</div>
 							
