@@ -26,16 +26,9 @@ get_header(); ?>
 			$order   = 'ASC';
 			$audio_limit	= '-1' ;
 			
-				$args = array(
-					'post_type' 	 => 'promos',
-					'posts_per_page' => $audio_limit, 
-					'paged' 		 => $paged,
-					'orderby'		 =>	$orderby,
-					'order'			 =>	$order
-				);
-				$wp_query = new WP_Query( $args );
+			
 
-				if ( $wp_query->have_posts()) : while (  $wp_query->have_posts()) :  $wp_query->the_post(); 
+				if (have_posts()) : while ( have_posts()) :  the_post(); 
 
 					
 					$prezzo = get_field( "prezzo" , $post->ID);

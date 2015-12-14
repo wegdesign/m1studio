@@ -79,7 +79,7 @@ get_header(); ?>
 									<div class="mp3options">
 										
 										<?php if($buy_audio == 1){?>
-											<span class="buy"><a href="mailto:localhost@prova.it"><i class="fa fa-shopping-cart fa-lg"></i></a></span>
+											<span class="buy"><a href="mailto:info@m1studio.ita"><i class="fa fa-shopping-cart fa-lg"></i></a></span>
 										<?php } ?>
 										<?php if($download_audio == 1){?>
 											<span class="download"  ><a href="<?php echo $traccia_audio; ?>"><i class="fa fa-download fa-lg"></i></a></span>

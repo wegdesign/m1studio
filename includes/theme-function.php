@@ -244,7 +244,7 @@ if(!function_exists("share_link")){
 		</a>
 	<?php }
 	// Linkdedin
-	if ( theme_get_option('linkedIn_enabled') == '1' ) {
+	if ( theme_get_option('linkedin_enabled') == '1' ) {
  	?>
  		<a class="icon-link round-corner linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;summary=<?php the_title(); ?>" >
 			<i class="fa fa-linkedin"></i>

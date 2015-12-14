@@ -90,13 +90,24 @@ register_taxonomy( 'promos_cat', 'promos', array(
 		'show_ui'			=> true,
 		'query_var'			=> true,
 		'show_admin_column' => true,
-		'rewrite'			=> array( 'slug' => 'genere' ),
+		'rewrite'			=> array( 'slug' => 'promos_tag' ),
 		'sort' 				=> true,
 		'args' 				=> array( 'orderby' => 'menu_order' ),
 		'has_archive' => true,
 
 	));
 	
+add_action( 'admin_head', 'add_menu_icons_promos' );
+ function add_menu_icons_promos(){
+?>
+
+<style>
+	#adminmenu .menu-icon-promos div.wp-menu-image:before {
+		content: '\f127';
+	}
+</style>
+<?php
+}		
 	
 	global $columns;
 	function promos_columns( $columns ) {

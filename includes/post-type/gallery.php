@@ -70,7 +70,17 @@ register_taxonomy( 'gallery_cat', 'gallery', array(
 
 	));
 	
-	
+add_action( 'admin_head', 'add_menu_icons_gallery' );
+ function add_menu_icons_gallery(){
+?>
+
+<style>
+	#adminmenu .menu-icon-gallery div.wp-menu-image:before {
+		content: '\f128';
+	}
+</style>
+<?php
+}	
 
 	global $columns;
 	function gallery_columns( $columns ) {

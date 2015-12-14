@@ -50,7 +50,7 @@ add_action( 'admin_head', 'add_menu_icons_service' );
 
 <style>
 	#adminmenu .menu-icon-services div.wp-menu-image:before {
-		content: '\f145';
+		content: '\f123';
 	}
 </style>
 <?php
