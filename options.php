@@ -60,6 +60,22 @@ function optionsframework_options() {
 		$options[] = array('name' => __('Select a Slider', 'm1studio'), 'desc' => __('Select Slider for HomePage', 'm1studio'), 'id' => 'slider_home', 'type' => 'select', 'options' => $options_slider);
 	}
 
+	
+	$num_column = array(
+		'3' => 'Three',
+		'4' => 'Four',
+		'5' => 'Five'
+	);
+	
+	$options[] = array(
+		'name' => __('Numero Promo', 'options_check'),
+		'desc' => __('Seleziona il numero dei promo da visualizzare', 'options_check'),
+		'id' => 'num_promo',
+		'std' => '4',
+		'type' => 'select',
+		'class' => 'mini', //mini, tiny, small
+		'options' => $num_column);
+	
 
 	$options[] = array('name' =>'Background', 'desc' => __('Select the Background Image for Body and assign its Properties according to your requirements.', 'm1studio'), 'id' => 'theme_bg' , 'type' => 'upload');
 	

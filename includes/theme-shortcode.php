@@ -80,8 +80,15 @@ add_shortcode("social", "theme_social_link");
 function promo_shortcode($atts, $content = null ) {
 			
 	//Columns
-	$column_index = 0; $columns = 4;
-	$class = 'col_fourth';
+	$column_index = 0; 
+	
+	
+	$columns = theme_get_option('num_promo');
+	$class = '';
+	$audio_limit	= '4' ;
+	if( $columns == '5' ) { $class = 'col_fifth'; $audio_limit	= '5' ;}
+	if( $columns == '4' ) { $class = 'col_fourth'; $audio_limit	= '4' ;}
+	if( $columns == '3' ) { $class = 'col_third'; $audio_limit	= '3' ;}
 
 	//Full Width Album Image Sizes
 	$width='470'; $height = '470' ;
@@ -89,7 +96,7 @@ function promo_shortcode($atts, $content = null ) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$orderby = 'date';
 	$order   = 'DESC';
-	$audio_limit	= '4' ;
+	
 			
 	$args = array(
 		'post_type' 	 => 'promos',
