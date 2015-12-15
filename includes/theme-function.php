@@ -222,7 +222,7 @@ if (!function_exists("theme_social_link")) {
 		foreach ($array_social as $social) {
 			$social_link = theme_get_option($social);
 			if ($social_link != "") {
-				$social_html .= "<a class='icon-link round-corner " . $social . "'><i class='fa fa-" . $social . "'></i></a>";
+				$social_html .= "<a class='icon-link round-corner " . $social . "' href='" . $social_link .  "' ><i class='fa fa-" . $social . "'></i></a>";
 			}
 		}
 		return $social_html;
